@@ -9,6 +9,7 @@ p{
 .navbar-feria{
 	color: #FFF;
 	margin-top: 5px;
+	width: 100%;
 }
 .navbar-feria a{
 	color: #FFF;
@@ -163,4 +164,25 @@ h1{
 #event-name{
 	font-weight: 500;
 	color: #000;
+}
+
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+  .canvas {
+    padding: 0;
+  }
 }
