@@ -1,0 +1,188 @@
+body{
+	padding-top: 220px; 
+	background-color: #EEE;
+	font-family: 'Roboto', sans-serif;
+}
+p{
+	font-size: 1em;
+}
+.navbar-feria{
+	color: #FFF;
+	margin-top: 5px;
+	width: 100%;
+}
+.navbar-feria a{
+	color: #FFF;
+	font-size: 20px;
+}
+.navmenu-nav{
+	margin-top: 20px;
+}
+.navbar-feria .icon-bar{
+	background-color: #000;
+}
+.navbar-feria .navbar-toggle{
+	float: left;
+	margin-left: 2%;
+	z-index: 1000;
+}
+.navbar-feria .navbar-toggle span{
+	background-color: #000;
+}
+.navbar-feria .navmenu-brand{
+	margin: 8px 0px;
+	padding: 9px 0px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.navbar-feria .navmenu-search{
+	margin: 4px 10px;
+	padding: 9px 9px;
+	float: right;
+	display: inline-block;
+	background-color: transparent;
+	color: #000;
+	border: none;
+}
+.navbar-feria .navmenu-search:hover{
+	border-radius: 50%;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fff;
+}
+.fixed-img.more_op{
+  opacity: 0.85;
+	
+}
+.fixed-img{
+	position: absolute;
+  background-image: url('../img/eventos.jpeg');
+  background-color: #fff; 
+  opacity: 0.5;
+   width: 100%;
+  z-index: 1000;
+  min-height: 225px;
+  background-position: center;
+    background-size: cover;
+}
+.foreground{
+	position: relative;
+	z-index: 1000;
+}
+.img-holder{
+  background-color: #fff;
+  z-index: 1000;
+  min-height: 224px;
+}
+
+.img-text{
+	text-align: center;
+	color: #fff;
+	padding-top: 85px;
+	font-weight: 200;
+}
+.img-img{
+	text-align: center;
+	color: #fff;
+	padding-top: 45px;
+	font-weight: 200;
+}
+.text-feria-img{
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.btn-feria{
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	color: #fff;
+	min-width: 125px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.btn-feria.inverted{
+	border: 2px solid #000;
+	color: #000;
+}
+.btn-feria:hover{
+	color: #000;
+	background-color: #fff;
+}
+.btn-feria.inverted:hover{
+	color: #fff;
+	background-color: #000;
+}
+
+div.circle-image{
+	max-width: 100%;
+	width:100%;
+	height:auto;
+	display:block;
+	padding-top:100%;
+	border-radius:50%;
+	background-position: initial;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+h1{
+	font-size: 1.3em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.evento{
+	padding: 5px 0px;
+	color: #000;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.evento:hover{
+	background-color: #f3f3f3;
+}
+
+.evento .event-title{
+	font-size: 1.3em;
+}
+.evento .event-date{
+	font-size: 1em;
+}
+.info-evento .event-date{
+	font-size: 1.3em;
+	font-weight: 200;
+}
+.col-xs-offset-4-5{
+	margin-left: 37.5%;	
+}
+
+#event-name{
+	font-weight: 500;
+	color: #000;
+}
+
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+  .canvas {
+    padding: 0;
+  }
+}
