@@ -6,7 +6,7 @@ Instalar cordova y crear el entorno
 
 ```
 npm install -g cordova
-# ir al directorio
+# ir al directorio donde quiero poner mi app
 cordova create feriadellibro
 cordova platform add android
 ```
@@ -20,6 +20,13 @@ El que define las políticas de seguridad es importante.
                     media-src *; 
                     script-src 'self' https://gobiernoabierto.cordoba.gob.ar;
                     font-src 'self' https://fonts.gstatic.com">
+```
+
+Antes de probar la app asegurarse de definir las variables de entorno.
+En linux
+```
+export ANDROID_HOME=/<installation location>/android-sdk-linux
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 ```
 
 Probar la app
