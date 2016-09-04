@@ -29,12 +29,31 @@ export ANDROID_HOME=/<installation location>/android-sdk-linux
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 ```
 
-Probar la app
+Compilar sin firma para el market y tener un APK para probar en el teléfono
+```
+cordova build android
+```
+
+Para probar la app en una maquina virtual
 
 ```
 cordova run feriadellibro
 ```
+Se requerirá android-sdk-tools, android-build-tools y muchas otras cosas.  
+ 
+Para compilar con las llaves necesarias para validar en el market de android
 
+#Solo una vez, crear la llave
+#keytool -genkey -v -keystore appname-key.keystore -alias MyAppName -keyalg RSA -keysize 2048 -validity 10000
+```
+cordova build android --release
+```
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /PATH/keys/appname-key.keystore /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk MyAppName 
+
+rm /PATH/platforms/android/ant-build/MyAppName-release.apk
+
+zipalign -v 4 /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk /PATH/platforms/android/ant-build/MyAppName-release.apk
 
 
 ### Instrucciones para compilar y publicar
