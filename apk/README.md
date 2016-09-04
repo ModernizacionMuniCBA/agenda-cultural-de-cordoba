@@ -39,7 +39,7 @@ Para probar la app en una maquina virtual
 ```
 cordova run feriadellibro
 ```
-Se requerirá android-sdk-tools, android-build-tools y muchas otras cosas.  
+Se requerirá android-sdk-tools, android-build-tools, java8 (la de Oracle, OpenJDK para no funcionar) y muchas otras cosas.  
  
 Para compilar con las llaves necesarias para validar en el market de android
 

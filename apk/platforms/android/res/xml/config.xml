@@ -4,14 +4,18 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Agenda de la Feria</name>
     <description>
         Agenda completa de eventos de la Feria del Libro de la Ciudad de Córdoba 2016
     </description>
-    <author email="andresvazquez@cordoba.gov.ar" href="https://gobiernoabierto.cordoba.gob.ar/">
+    <author email="gobiernoabiertocba@gmail.com" href="https://gobiernoabierto.cordoba.gob.ar/">
         Secretaría de Modernización de la Ciudad de Córdoba
     </author>
-    <content src="index-cordova.html" />
+    <content src="index-orig-cordova.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -19,6 +23,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon density="hdpi" src="www/res/icono-64x64.png" />
+    <splash density="land-hdpi" src="www/res/splash-app-feria-del-libro.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
