@@ -21,12 +21,15 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
 			$('#event-location').html(data.lugar.nombre);
 			$('#event-info').html(data.descripcion);
-			
+			var totalTipos = data.tipos.length;
 			$.each(data.tipos, function(i, tipo) {
-				$('#tags').append(tipo.nombre+' ');
+				$('#tags').append('<a href="agrupador.html#tipo-'+tipo.id+'">'+tipo.nombre+'</a>');
+				if(i!=totalTipos-1){
+					$('#tags').append(' | ');
+				}
 			});
-			if (data.imagen != null){
-				$('#event-image').css("background-image", "url(/"+data.imagen+")");
+			if (data.imagen.thumbnail != undefined){
+				$('#event-image').css("background-image", "url(/"+data.imagen.thumbnail+")");
 			}
 			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
 			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
@@ -37,6 +40,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
 			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
+			$('#loading').hide();
 		}
 		$(window).on('resize', function(){
 			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);

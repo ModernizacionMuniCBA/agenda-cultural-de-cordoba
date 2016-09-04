@@ -41,6 +41,10 @@ p{
 	color: #fff;
 	font-size: 1em;	
 }
+.navbar-feria .navmenu-tags a{
+	color: #fff;
+	font-size: 1em;	
+}
 .navbar-feria .navmenu-search{
 	margin: 4px 10px;
 	padding: 9px 9px;
@@ -282,6 +286,56 @@ h1.index-recom{
 	margin-top: 5px;
 }
 
+.about{
+	background-color: #000;
+	padding-top: 50px !important;
+}
+
+.info-app-version{
+	background-color: #2D2D2D;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #fff;
+	font-weight: 200;
+}
+.info-app-version h1{
+	margin-top: 10px;
+	font-size: 1.1em;
+	text-transform: none;
+	font-weight: 200;
+}
+
+.info-app-version h1.ver-num{
+	text-align: right;
+}
+.feria-logo{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.app-dev{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.app-dev h1{
+	font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin:5px;
+    margin-bottom: 10px;
+}
+.app-dev h2{
+	margin: 5px;;
+	font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#loading{
+	text-align: center;
+	display: inline;
+}
 @media (min-width: 0) {
   .navbar-toggle {
     display: block; /* force showing the toggle */
