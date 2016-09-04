@@ -30,40 +30,51 @@
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-      <ul class="nav navmenu-nav">
-        <li class="active"><a href="index.html">Inicio</a></li>
-        <li><a href="#">Eventos</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-    </nav>
-    <div class="navbar navbar-feria navbar-fixed-top">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <p class="navmenu-brand">Eventos</p>
-      <a class="" href="#"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
-    </div>
+	  <div class="menu-bg"></div>
+	  <div class="menu-bg-green"></div>
+
+	  <ul class="nav navmenu-nav">
+	    <li class="active"><a href="index.html">INICIO</a></li>
+	  </ul>
+	  <ul class="nav navmenu-nav" id="groups-menu">
+	    <li class="li-title">ESPACIOS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav" id="categories-menu">
+	    <li class="li-title">TIPOS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav">
+	    <li><a href="index.html">SOBRE ESTA APP</a></li>
+	  </ul>
+	</nav>
+	<div class="navbar navbar-feria navbar-fixed-top">
+	  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <p class="navmenu-brand">Eventos</p>
+	  <a class="" href="#"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	</div>
     
-    <div class="img-holder navbar-fixed-top">
-        <div class="fixed-img more_op"></div>
-        <div class="foreground">
-            <div class="img-text">
-                <p class="text-feria-img">Próximos Eventos</p>
-                <button type="button" class="btn btn-feria">Elegí tu Evento</button>
-            </div>
-        </div>
-    </div>
-    
+   <div class="img-holder home navbar-fixed-top">
+		<div class="fixed-img home more_op"></div>
+		<div class="foreground">
+			<div class="img-text">
+				<p class="text-feria-img">Próximos Eventos</p>
+				<p class="btn btn-feria not-hover">Elegí tu Evento</p>
+<!-- 				<div style="background-image: url('img/green-bg.png'); width: 100%; background-size: cover; height: 50px;">Te recomendamos</div> -->
+				<div class="event-date-time index-recom-bg">
+			    	<div class="col-xs-12"><h1 class="index-recom">Te recomendamos</h1></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Te recomendamos</h1>
-            </div>
-        </div>
-        <div id="event-list">
-        </div>
+	    <div id="event-list">
+	    </div>
     </div><!-- /.container -->
 
     <script src="js/jquery.js"></script>
@@ -71,6 +82,9 @@
     <script src="js/jasny-bootstrap.min.js"></script>
     <script src="js/dateformat.js"></script>
     <script src="js/get_events.js"></script>
+	<script src="js/get_categories.js"></script>
+	<script src="js/get_groups.js"></script>
+	<script src="js/h_scroll.js"></script>
     <!-- para cordova -->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

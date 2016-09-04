@@ -13,37 +13,38 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			success: handleData
 		});
 		function handleData(data) {
-			console.log(data);
+// 			console.log(data);
 			
 			$('#event-name').html(data.titulo);	
 			$(document).prop('title', data.titulo);
-			var date = data.inicia.split("-");
-			var curr_y = date[0];
-			var curr_m = date[1];
-			var date_splited = date[2].split('T');
-			var curr_d = date_splited[0];
-			var curr_t = date_splited[1].slice(0, -1);
- 			var real_date = curr_m+'/'+curr_d+'/'+curr_y+' '+curr_t;
- 			console.log(real_date);
-			$('#event-date').html(dateFormat(real_date, "dddd dd 'de' mmmm, h:MM TT"));
+			$('#event-date').html(dateFormat(data.inicia, "dddd dd 'de' mmmm"));
+			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
 			$('#event-location').html(data.lugar.nombre);
 			$('#event-info').html(data.descripcion);
 			
 			$.each(data.tipos, function(i, tipo) {
-				$('#tags').append('<button type="button" class="btn btn-feria inverted" id="event-category">'+tipo.nombre+'</button>')
+				$('#tags').append(tipo.nombre+' ');
 			});
 			if (data.imagen != null){
 				$('#event-image').css("background-image", "url(/"+data.imagen+")");
 			}
-			
-			$('.img-holder').css('height', $('.foreground').outerHeight(true));
-			$('.fixed-img').css('height', $('.foreground').outerHeight(true));
-			var bottom = $('.img-holder').position().top + $('.img-holder').outerHeight(true);
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+
+// 			console.log(height);
+// 			console.log($('.event-date-time').outerHeight(true));
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
 		}
 		$(window).on('resize', function(){
-			var bottom = $('.foreground').position().top + $('.foreground').outerHeight(true);
-			$('.img-holder').css('height', $('.foreground').outerHeight(true));
-			$('.fixed-img').css('height', $('.foreground').outerHeight(true));
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+// 			console.log(height);
+// 			console.log($('.event-date-time').outerHeight(true));
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
+
 		});
