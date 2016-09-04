@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
     id="ar.gob.cordoba.gobiernoabierto.feriadellibro" 
-    version="1.1.19" 
+    version="1.1.21" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Agenda de la Feria</name>
@@ -11,8 +11,9 @@
     <author email="gobiernoabiertocba@gmail.com" href="https://gobiernoabierto.cordoba.gob.ar/">
         Secretaría de Modernización de la Ciudad de Córdoba
     </author>
-    <content src="index-orig-cordova.html" />
+    <content src="index-cordova.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <allow-navigation href="*" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
