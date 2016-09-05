@@ -9,6 +9,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 var app = {
     // Application Constructor
     initialize: function() {
+        this.addLog("Initialize");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -24,12 +25,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
+        this.addLog("onDeviceReady 1");
         var uuid = (undefined === device) ? 'ru237287a121a73r82' : device.uuid;
         ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});    
         ga('set','checkProtocolTask', null); //just for mobile phonegap application
         ga('set','checkStorageTask',null);
         ga('send', 'pageview', {'page': '/agenda-de-la-feria/app-home'}); 
+        this.addLog("onDeviceReady 2");
     },
 
     // Update DOM on a Received Event
@@ -37,6 +39,10 @@ var app = {
         var parentElement = document.getElementById(id);
         
         console.log('Received Event: ' + id);
+    },
+    fullLog: "",
+    addLog: function(txt){
+        this.fullLog += "<br />" + txt;
     }
 };
 
@@ -55,5 +61,6 @@ else
 
 // para llamar desde la app movil, sino va como auto
 window.touchAnalytics = function(page, title){
+    app.addLog("touchAnalytics " + page + " -- " + title);
     ga('send', 'pageview', {'page': page,'title': title});
   };

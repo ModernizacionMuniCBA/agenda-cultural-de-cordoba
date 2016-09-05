@@ -90,7 +90,9 @@
 				<h1>Municipalidad de Córdoba</h1>
 				<h2>Secretaría de Cultura</h2>
 				<h2>Secretaría de Modernización</h2>
+				<p id="fullLog"></p>
 				<p>Agenda de la feria v1.1.27</p>
+
 		    </div>
 		    <div class="col-xs-6 col-xs-push-6 col-sm-3" style="background-color: #60B5A3; height: 130px; z-index: -1">
 				
@@ -111,6 +113,7 @@
 	<script>
 		if (inCordova) {
 			touchAnalytics('/agenda-de-la-feria/app-about', 'About app feria del libro');
+			$("#fullLog").html(app.fullLog);
 		} else {
 			ga('send', 'pageview');
 		}
