@@ -1,6 +1,7 @@
 var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var gobAbiertoAPI_actividades = "/actividad-publica/"
-		var formatJson = "?format=json";
+		var gobAbiertoAPI_evento = "?evento_id="
+		var formatJson = "&format=json";
 		var actividad = '';
 		var url = document.location.toString();
 		if (url.match('#')) {
@@ -9,7 +10,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		}
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+'/'+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+gobAbiertoAPI_evento+formatJson,
 			success: handleData
 		});
 		function handleData(data) {
