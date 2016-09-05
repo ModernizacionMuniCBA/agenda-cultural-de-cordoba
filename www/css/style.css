@@ -1,7 +1,10 @@
 body{
 	padding-top: 220px; 
-	background-color: #EEE;
+	background-color: #eee;
 	font-family: 'Roboto', sans-serif;
+}
+.navmenu-default, .navbar-default .navbar-offcanvas{
+	background-color: #eee;
 }
 p{
 	font-size: 1em;
@@ -359,6 +362,17 @@ h1.index-recom{
 #event-esp-txt{
 	text-align: center;
 	color: #000;
+}
+
+.page-prev{
+	margin-left: 5px;	
+}
+
+.page-next{
+	margin-right: 5px;
+}
+.pager li>a, .pager li>span{
+	background-color: transparent;
 }
 
 @media (min-width: 0) {
