@@ -55,7 +55,17 @@
 	    <span class="icon-bar"></span>
 	  </button>
 	  <p class="navmenu-brand">Eventos</p>
-	  <a class="" href="#"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <div class="searchField">
+		  
+		  <div class="row">
+			  <div class="col-xs-12">
+				  <form id="searchForm" action="search.html">
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  </form>
+			  </div>
+		  </div>
+	  </div>
 	</div>
     
    <div class="img-holder home navbar-fixed-top">
@@ -86,6 +96,8 @@
 	<script src="js/get_categories.js"></script>
 	<script src="js/get_groups.js"></script>
 	<script src="js/h_scroll.js"></script>
+    <script src="js/search_bar.js"></script>
+
     <!-- para cordova -->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

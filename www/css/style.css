@@ -336,6 +336,31 @@ h1.index-recom{
 	text-align: center;
 	display: inline;
 }
+
+.searchField{
+	display: none;
+}
+.searchField input{
+	padding-left: 10px;
+	width: 100%; 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+	color: #000; 
+	border-top: 5px solid #60B5A3;
+	border-bottom: 5px solid #60B5A3;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+.searchField input:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+#event-esp-txt{
+	text-align: center;
+	color: #000;
+}
+
 @media (min-width: 0) {
   .navbar-toggle {
     display: block; /* force showing the toggle */

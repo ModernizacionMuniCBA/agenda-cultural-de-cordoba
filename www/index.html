@@ -42,7 +42,17 @@
 	    <span class="icon-bar"></span>
 	  </button>
 	  <p class="navmenu-brand">Eventos</p>
-	  <a class="" href="#"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <div class="searchField">
+		  
+		  <div class="row">
+			  <div class="col-xs-12">
+				  <form id="searchForm" action="search.html">
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  </form>
+			  </div>
+		  </div>
+	  </div>
 	</div>
 	
 	<div class="img-holder home navbar-fixed-top">
@@ -51,7 +61,6 @@
 			<div class="img-text">
 				<p class="text-feria-img">Próximos Eventos</p>
 				<p class="btn btn-feria not-hover">Elegí tu Evento</p>
-<!-- 				<div style="background-image: url('img/green-bg.png'); width: 100%; background-size: cover; height: 50px;">Te recomendamos</div> -->
 				<div class="event-date-time index-recom-bg">
 			    	<div class="col-xs-12"><h1 class="index-recom">Te recomendamos</h1></div>
 				</div>
@@ -70,10 +79,13 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
     <script src="js/dateformat.js"></script>
+    <script src="js/url_spliter.js"></script>
     <script src="js/get_events.js"></script>
 	<script src="js/get_categories.js"></script>
 	<script src="js/get_groups.js"></script>
 	<script src="js/h_scroll.js"></script>
+    <script src="js/search_bar.js"></script>
+
 
   </body>
 </html>

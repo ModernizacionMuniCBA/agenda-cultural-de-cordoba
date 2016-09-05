@@ -9,6 +9,6 @@
 		});
 		function handleData(data) {
 			$.each(data.results, function(i, category) {
-				$('#categories-menu').append('<div class="row" style="margin-top:5px; margin-left:5px;"><li><a href="agrupador.html#tipo-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url(img/default-event.png);"></div></div><div class="col-xs-9">'+category.nombre+'</div></a></li></div>');
+				$('#categories-menu').append('<div class="row" style="margin-top:5px; margin-left:5px;"><li><a href="tipo.html#tipo-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url(img/default-event.png);"></div></div><div class="col-xs-9">'+category.nombre+'</div></a></li></div>');
 			});
 		}

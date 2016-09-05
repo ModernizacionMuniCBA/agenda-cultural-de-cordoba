@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sobre esta APP </title>
+    <title>Agenda de la Feria</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -16,7 +15,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="about">
+  <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
 	  <div class="menu-bg"></div>
 	  <div class="menu-bg-green"></div>
@@ -33,7 +32,7 @@
 	    <div class="li-title-borde"></div>
 	  </ul>
 	  <ul class="nav navmenu-nav">
-	    <li><a href="index.html">SOBRE ESTA APP</a></li>
+	    <li><a href="about.html">SOBRE ESTA APP</a></li>
 	  </ul>
 	</nav>
 	<div class="navbar navbar-feria navbar-fixed-top">
@@ -42,7 +41,7 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand navmenu-tags" id="tags"></p>
+	  <p class="navmenu-brand">Eventos</p>
 	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
 	  <div class="searchField">
 		  
@@ -55,46 +54,36 @@
 		  </div>
 	  </div>
 	</div>
+	
+	<div class="img-holder home navbar-fixed-top">
+		<div class="fixed-img home more_op"></div>
+		<div class="foreground">
+			<div class="img-text">
+				<p class="text-feria-img">Búsqueda: </p>
+				<p class="btn btn-feria not-hover" id="searched-string"></p>
+				<div class="event-date-time index-recom-bg">
+			    	<div class="col-xs-12"><h1 class="index-recom">Resultados de tu búsqueda</h1></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
     <div class="container">
-	    <div class="row">
-		    <div class="col-xs-4">
-				<img src="img/muni-logo.png" class=" pull-left"/>
-		    </div>
-		    <div class="clearfix"></div>
-	    </div>
-	    <div class="row info-app-version">
-		    <div class="col-xs-6">
-				<h1> Versión </h1>
-		    </div>
-		    <div class="col-xs-6">
-				<h1 class="ver-num"> 1.0 </h1>
-		    </div>
-		    <div class="clearfix"></div>
-	    </div>
-	    <div class="row feria-logo">
-		    <div class="col-xs-6">
-				<img src="img/feria-logo.png" class="img-responsive pull-left"/>
-		    </div>
-		    <div class="clearfix"></div>
-	    </div>
-	    <div class="row app-dev">
-		    <div class="col-xs-8 col-sm-4 col-sm-offset-3" style="background-color: #fff; height: 100px; margin-top: 30px; position: absolute">
-				<h1>Municipalidad de Córdoba</h1>
-				<h2>Secretaría de Cultura</h2>
-				<h2>Secretaría de Modernización</h2>
-		    </div>
-		    <div class="col-xs-6 col-xs-push-6 col-sm-3" style="background-color: #60B5A3; height: 130px; z-index: -1">
-				
-		    </div>
+	    <div id="event-list">
+		     <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
 	    </div>
     </div><!-- /.container -->
+
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
- 	<script src="js/get_categories.js"></script>
+    <script src="js/url_spliter.js"></script>
+    <script src="js/dateformat.js"></script>
+	<script src="js/get_categories.js"></script>
 	<script src="js/get_groups.js"></script>
-	<script src="js/search_bar.js"></script>
-
+	<script src="js/h_scroll.js"></script>
+    <script src="js/search_bar.js"></script>
+    <script src="js/get_search_results.js"></script>   
   </body>
 </html>

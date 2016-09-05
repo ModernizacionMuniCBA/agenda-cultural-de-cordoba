@@ -1,21 +1,21 @@
 var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var gobAbiertoAPI_actividades = "/actividad-publica/"
-// 		var dataType = "?agrupador_id=";
 		var formatJson = "&format=json";
+		var gobAbiertoAPI_evento = "&evento_id=1"
 		var actividad = '';
 		var url = document.location.toString();
 		if (url.match('#')) {
 			var string = url.split('#')[1];
 			if (string.split('-')[0] == "agr"){
-				var dataType = "?agrupador_id=";
+				var dataType = "agrupador";
 			}else{
-				var dataType = "?tipo_id=";
+				var dataType = "tipo";
 			}
 			actividad = string.split('-')[1];
 		}
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+dataType+actividad+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+gobAbiertoAPI_evento+formatJson,
 			success: handleData
 		});
 		function handleData(data) {
@@ -34,11 +34,23 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		 			}
 	 			}
 			});
-			console.log(data.results[0]);
-			$('#event-name').html(data.results[0].agrupador.nombre);	
-			$(document).prop('title', data.results[0].agrupador.nombre);
-			if (data.results[0].agrupador.imagen.thumbnail != undefined){
-				$('#event-image').css("background-image", "url("+data.results[0].agrupador.imagen.thumbnail+")");
+			if(data.results[0] != undefined){
+				if(dataType == "agrupador"){
+					$('#event-name').html(data.results[0].agrupador.nombre);	
+					$(document).prop('title', data.results[0].agrupador.nombre);
+					if (data.results[0].agrupador.imagen.thumbnail != undefined){
+						$('#event-image').css("background-image", "url("+data.results[0].agrupador.imagen.thumbnail+")");
+					}
+				}else{
+					$.each(data.results[0].tipos, function(i, tipo) {
+						if(tipo.id == actividad){
+							$('#event-name').html(tipo.nombre);
+							$(document).prop('title', tipo.nombre);
+						}
+					});		
+				}
+			}else{
+				$('#event-list').append('No se encontraron actividades');
 			}
 			$('#loading').hide();
 			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
