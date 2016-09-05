@@ -2,12 +2,24 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+
+    <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar; 
+                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                    media-src *; 
+                    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
+                    font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Agenda de la Feria</title>
+	<title>Agenda de la Feria</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -17,10 +29,22 @@
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+	  <div class="menu-bg"></div>
+	  <div class="menu-bg-green"></div>
+
 	  <ul class="nav navmenu-nav">
-	    <li class="active"><a href="index.html">Inicio</a></li>
-	    <li><a href="#">Eventos</a></li>
-	    <li><a href="#">Link</a></li>
+	    <li class="active"><a href="index.html">INICIO</a></li>
+	  </ul>
+	  <ul class="nav navmenu-nav" id="groups-menu">
+	    <li class="li-title">ESPACIOS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav" id="categories-menu">
+	    <li class="li-title">TIPOS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav">
+	    <li><a href="about.html">SOBRE ESTA APP</a></li>
 	  </ul>
 	</nav>
 	<div class="navbar navbar-feria navbar-fixed-top">
@@ -30,26 +54,35 @@
 	    <span class="icon-bar"></span>
 	  </button>
 	  <p class="navmenu-brand">Eventos</p>
-	  <a class="" href="#"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+	  <div class="searchField">
+		  
+		  <div class="row">
+			  <div class="col-xs-12">
+				  <form id="searchForm" action="search.html">
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  </form>
+			  </div>
+		  </div>
+	  </div>
 	</div>
 	
-	<div class="img-holder navbar-fixed-top">
-		<div class="fixed-img more_op"></div>
+	<div class="img-holder home navbar-fixed-top">
+		<div class="fixed-img home more_op"></div>
 		<div class="foreground">
 			<div class="img-text">
 				<p class="text-feria-img">Próximos Eventos</p>
-				<button type="button" class="btn btn-feria">Elegí tu Evento</button>
+				<p class="btn btn-feria not-hover">Elegí tu Evento</p>
+				<div class="event-date-time index-recom-bg">
+			    	<div class="col-xs-12"><h1 class="index-recom">Te recomendamos</h1></div>
+				</div>
 			</div>
 		</div>
 	</div>
 	
     <div class="container">
-	    <div class="row">
-		    <div class="col-xs-12">
-			    <h1>Te recomendamos</h1>
-		    </div>
-	    </div>
 	    <div id="event-list">
+		     <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
 	    </div>
     </div><!-- /.container -->
 
@@ -58,7 +91,22 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
     <script src="js/dateformat.js"></script>
+    <script src="js/url_spliter.js"></script>
     <script src="js/get_events.js"></script>
+	<script src="js/get_categories.js"></script>
+	<script src="js/get_groups.js"></script>
+	<script src="js/h_scroll.js"></script>
+    <script src="js/search_bar.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <script>
+		if (inCordova) {
+			touchAnalytics('/agenda-de-la-feria/app-home', 'Home app feria del libro');
+		} else {
+			ga('send', 'pageview');
+		}
+    </script>
 
   </body>
 </html>

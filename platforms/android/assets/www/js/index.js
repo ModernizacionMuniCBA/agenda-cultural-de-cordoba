@@ -1,21 +1,11 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
+var uuid_analytics = "UA-79840006-1";
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,7 +24,14 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        var uuid = (undefined === device) ? 'ru237287a121a73r82' : device.uuid;
+        ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});    
+        ga('set','checkProtocolTask', null); //just for mobile phonegap application
+        ga('set','checkStorageTask',null);
+        ga('send', 'pageview', {'page': '/agenda-de-la-feria/app-home'}); 
     },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -48,4 +45,26 @@ var app = {
     }
 };
 
-app.initialize();
+
+
+// detectar si estamos dentro de la app o no
+var inCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
+
+if (inCordova) {
+    var fileref=document.createElement('script');
+    fileref.setAttribute("type","text/javascript");
+    fileref.setAttribute("src", "cordoba.js");
+    document.getElementsByTagName("head")[0].appendChild(fileref);
+
+    app.initialize();
+
+    }
+else 
+    {
+    ga('create', uuid_analytics, 'auto');
+    }
+
+// para llamar desde la app movil, sino va como auto
+window.touchAnalytics = function(page, title){
+    ga('send', 'pageview', {'page': page,'title': title});
+  };

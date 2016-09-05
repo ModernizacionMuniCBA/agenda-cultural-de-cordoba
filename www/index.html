@@ -2,9 +2,21 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+
+    <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar; 
+                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                    media-src *; 
+                    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
+                    font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Agenda de la Feria</title>
+	<title>Agenda de la Feria</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500" rel="stylesheet">
@@ -86,6 +98,15 @@
 	<script src="js/h_scroll.js"></script>
     <script src="js/search_bar.js"></script>
 
+    <script src="js/index.js"></script>
+
+    <script>
+		if (inCordova) {
+			touchAnalytics('/agenda-de-la-feria/app-home', 'Home app feria del libro');
+		} else {
+			ga('send', 'pageview');
+		}
+    </script>
 
   </body>
 </html>

@@ -82,6 +82,7 @@
 				<h1>Municipalidad de Córdoba</h1>
 				<h2>Secretaría de Cultura</h2>
 				<h2>Secretaría de Modernización</h2>
+				<p>Agenda de la feria v1.1.26</p>
 		    </div>
 		    <div class="col-xs-6 col-xs-push-6 col-sm-3" style="background-color: #60B5A3; height: 130px; z-index: -1">
 				
@@ -95,6 +96,18 @@
  	<script src="js/get_categories.js"></script>
 	<script src="js/get_groups.js"></script>
 	<script src="js/search_bar.js"></script>
+
+	<script src="js/index.js"></script>
+
+	<script>
+		if (inCordova) {
+			touchAnalytics('/agenda-de-la-feria/app-about', 'About app feria del libro');
+		} else {
+			ga('send', 'pageview');
+		}
+    </script>
+
+	 
 
   </body>
 </html>

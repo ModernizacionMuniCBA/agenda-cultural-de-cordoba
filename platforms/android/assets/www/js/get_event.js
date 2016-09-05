@@ -9,41 +9,56 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		}
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+'/'+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+formatJson,
 			success: handleData
 		});
 		function handleData(data) {
-			console.log(data);
+// 			console.log(data);
 			
 			$('#event-name').html(data.titulo);	
 			$(document).prop('title', data.titulo);
-			var date = data.inicia.split("-");
-			var curr_y = date[0];
-			var curr_m = date[1];
-			var date_splited = date[2].split('T');
-			var curr_d = date_splited[0];
-			var curr_t = date_splited[1].slice(0, -1);
- 			var real_date = curr_m+'/'+curr_d+'/'+curr_y+' '+curr_t;
- 			console.log(real_date);
-			$('#event-date').html(dateFormat(real_date, "dddd dd 'de' mmmm, h:MM TT"));
+			$('#event-date').html(dateFormat(data.inicia, "dddd dd 'de' mmmm"));
+			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
 			$('#event-location').html(data.lugar.nombre);
 			$('#event-info').html(data.descripcion);
-			
+			var totalTipos = data.tipos.length;
 			$.each(data.tipos, function(i, tipo) {
-				$('#tags').append('<button type="button" class="btn btn-feria inverted" id="event-category">'+tipo.nombre+'</button>')
+				$('#tags').append('<a href="agrupador.html#tipo-'+tipo.id+'">'+tipo.nombre+'</a>');
+				if(i!=totalTipos-1){
+					$('#tags').append(' | ');
+				}
 			});
-			if (data.imagen != null){
-				$('#event-image').css("background-image", "url(/"+data.imagen+")");
+			if (data.imagen.thumbnail != undefined){
+				$('#event-image').css("background-image", "url("+data.imagen.thumbnail+")");
 			}
-			
-			$('.img-holder').css('height', $('.foreground').outerHeight(true));
-			$('.fixed-img').css('height', $('.foreground').outerHeight(true));
-			var bottom = $('.img-holder').position().top + $('.img-holder').outerHeight(true);
+			if (data.agrupador.imagen.thumbnail != undefined){
+// 				console.log(data.agrupador.imagen.thumbnail);
+				$('#esp-image').css("background-image", "url("+data.agrupador.imagen.thumbnail+")");
+			}
+			$('#event-esp-link').attr('href', 'agrupador.html#agr-'+data.agrupador.id);
+			$('#event-esp-txt').append("<p>"+data.agrupador.nombre+"</p>");
+			if (data.organizador.imagen.thumbnail != undefined){
+				$('#event-org').append("<img src='"+data.organizador.imagen.thumbnail+"' class='img-responsive' />");
+			}
+			$('#event-org').append("<p>"+data.organizador.nombre+"</p>");
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+
+// 			console.log(height);
+// 			console.log($('.event-date-time').outerHeight(true));
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
+			$('#loading').hide();
 		}
 		$(window).on('resize', function(){
-			var bottom = $('.foreground').position().top + $('.foreground').outerHeight(true);
-			$('.img-holder').css('height', $('.foreground').outerHeight(true));
-			$('.fixed-img').css('height', $('.foreground').outerHeight(true));
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+// 			console.log(height);
+// 			console.log($('.event-date-time').outerHeight(true));
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
+
 		});
