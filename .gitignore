@@ -2,4 +2,6 @@
 apk/platforms/android/.gradle/*
 apk/platforms/android/CordovaLib/build/*
 apk/platforms/android/assets/www/
+*~
+
 
