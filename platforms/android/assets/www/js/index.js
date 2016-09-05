@@ -35,12 +35,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
+        
         console.log('Received Event: ' + id);
     }
 };
@@ -51,13 +46,7 @@ var app = {
 var inCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
 
 if (inCordova) {
-    var fileref=document.createElement('script');
-    fileref.setAttribute("type","text/javascript");
-    fileref.setAttribute("src", "cordoba.js");
-    document.getElementsByTagName("head")[0].appendChild(fileref);
-
     app.initialize();
-
     }
 else 
     {
