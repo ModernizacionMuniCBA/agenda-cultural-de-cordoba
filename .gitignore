@@ -1,9 +1,10 @@
 *.apk
 platforms/android/CordovaLib/build/*
 platforms/android/assets/www/
+/platforms/android/assets
 *~
 platforms/android/.gradle/*
-
+/platforms/android/.gradle
 
 
 
