@@ -1,10 +1,9 @@
-*.apk
-platforms/android/CordovaLib/build/*
-platforms/android/assets/www/
-/platforms/android/assets
 *~
-platforms/android/.gradle/*
-/platforms/android/.gradle
-
+*.apk
+platforms/android/CordovaLib/build/
+platforms/android/assets/
+platforms/android/assets
+platforms/android/.gradle/
+platforms/android/res/
 
 
