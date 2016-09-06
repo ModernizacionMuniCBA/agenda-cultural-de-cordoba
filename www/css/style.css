@@ -2,6 +2,7 @@ body{
 	padding-top: 220px; 
 	background-color: #eee;
 	font-family: 'Roboto', sans-serif;
+	background-image: none;
 }
 .navmenu-default, .navbar-default .navbar-offcanvas{
 	background-color: #eee;
