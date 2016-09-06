@@ -3,12 +3,18 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var gobAbiertoAPI_evento = "?evento_id=1"
 		var formatJson = "&format=json";
 		var search = getParameterByName('search'); 
+		var page_eventos = "&page=";
+		var pageNumber = getParameterByName('page'); 
+		if (pageNumber == null){
+			pageNumber = 1;
+		}
+		var page_size_str = "&page_size=";
 		$("#searched-string").html(search);
 		var bottom = $('.img-holder').position().top + $('.img-holder').outerHeight(true)+10;
 		$('body').css('padding-top', bottom);
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?q="+search+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?q="+search+page_eventos+pageNumber+page_size_str+pageSize+formatJson,
 			success: handleData
 		});
 		function handleData(data) {
@@ -24,6 +30,20 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			}else{
 			 	$('#event-list').append('No se encontraron actividades.');
 		 	}
+		 	var htmlPrvNxt = '<div class="row evento"><nav aria-label="..."><ul class="pager">';
+			if (data.previous != null){
+				var prevPage = getParameterByName('page', data.previous);
+				if (prevPage == null){
+					prevPage = 1;
+				}
+				htmlPrvNxt += '<li class="previous"><a href="search.html?search='+search+'&page='+prevPage+'" class="pull-left pager-li page-prev"><span aria-hidden="true">&larr;</span>Anterior</a></li>';
+			}
+			if (data.next != null){
+				var nextPage = getParameterByName('page', data.next);
+				htmlPrvNxt += '<li class="next"><a href="search.html?search='+search+'&page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
+			}
+			htmlPrvNxt += '</div>'
+			$('#event-list').append(htmlPrvNxt);
 			$('#loading').hide();
 
 		}
