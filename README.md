@@ -58,12 +58,14 @@ cordova run feriadellibro
 Para compilar con las llaves necesarias para validar en el market de android
 
 #Solo una vez, crear la llave
-#keytool -genkey -v -keystore appname-key.keystore -alias MyAppName -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore agenda-de-la-feria-key.keystore -alias AgendaDeLaFeria -keyalg RSA -keysize 2048 -validity 10000
+
 ```
 cordova build android --release
 ```
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /PATH/keys/appname-key.keystore /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk MyAppName 
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-de-la-feria-key.keystore /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk MyAppName 
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release_key_name.keystore app_name.apk alias_name
 
 rm /PATH/platforms/android/ant-build/MyAppName-release.apk
 
