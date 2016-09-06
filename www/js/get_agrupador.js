@@ -3,6 +3,14 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var formatJson = "&format=json";
 		var gobAbiertoAPI_evento = "&evento_id=1"
 		var actividad = '';
+		
+		var page_eventos = "&page=";
+		var pageNumber = getParameterByName('page'); 
+		if (pageNumber == null){
+			pageNumber = 1;
+		}
+		var page_size_str = "&page_size=";
+		
 		var url = document.location.toString();
 		if (url.match('#')) {
 			var string = url.split('#')[1];
@@ -11,11 +19,12 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			}else{
 				var dataType = "tipo";
 			}
-			actividad = string.split('-')[1];
-		}
+			actividad = string.split('-')[1].split('?')[0];
+		
+		}		
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+gobAbiertoAPI_evento+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+gobAbiertoAPI_evento+page_eventos+pageNumber+page_size_str+pageSize+formatJson,
 			success: handleData
 		});
 		function handleData(data) {
@@ -34,6 +43,21 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		 			}
 	 			}
 			});
+			var htmlPrvNxt = '<div class="row evento"><nav aria-label="..."><ul class="pager">';
+			if (data.previous != null){
+				var prevPage = getParameterByName('page', data.previous);
+				if (prevPage == null){
+					prevPage = 1;
+				}
+				htmlPrvNxt += '<li class="previous"><a href="agrupador.html#'+string.split('?')[0]+'?page='+prevPage+'" class="pull-left pager-li page-prev"><span aria-hidden="true">&larr;</span>Anterior</a></li>';
+			}
+			if (data.next != null){
+				var nextPage = getParameterByName('page', data.next);
+				htmlPrvNxt += '<li class="next"><a href="agrupador.html#'+string.split('?')[0]+'?page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
+			}
+			htmlPrvNxt += '</div>'
+			$('#event-list').append(htmlPrvNxt);
+			
 			if(data.results[0] != undefined){
 				if(dataType == "agrupador"){
 					$('#event-name').html(data.results[0].agrupador.nombre);	
