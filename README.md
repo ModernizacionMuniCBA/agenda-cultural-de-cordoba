@@ -55,22 +55,19 @@ No es necesario, el APK ya es funcional
 cordova run feriadellibro
 ```
  
-Para compilar con las llaves necesarias para validar en el market de android
+Para compilar con las llaves necesarias y [firmar para el market de android](https://developer.android.com/studio/publish/app-signing.html).  
 
+```
 #Solo una vez, crear la llave
 keytool -genkey -v -keystore agenda-de-la-feria-key.keystore -alias AgendaDeLaFeria -keyalg RSA -keysize 2048 -validity 10000
-
-```
 cordova build android --release
+# queda en platforms/android/build/outputs/apk/android-release-unsigned.apk
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-de-la-feria-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk AgendaDeLaFeria
+
+# revisar el path de zipalign uno por cada version del sdk, em mi caso _android-sdk-linux/build-tools/23.0.3/zipalign_   
+zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/AgendaDeLaFeria-release.apk
 ```
-
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-de-la-feria-key.keystore /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk MyAppName 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release_key_name.keystore app_name.apk alias_name
-
-rm /PATH/platforms/android/ant-build/MyAppName-release.apk
-
-zipalign -v 4 /PATH/platforms/android/ant-build/MyAppName-release-unaligned.apk /PATH/platforms/android/ant-build/MyAppName-release.apk
-
 
 ### Instrucciones para compilar y publicar
 
