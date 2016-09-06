@@ -1,5 +1,6 @@
 *~
 *.apk
+agenda-de-la-feria-key.keystore
 
 # Mac
 .DS_Store
@@ -25,6 +26,7 @@ platforms/android/CordovaLib/local.properties
 platforms/android/.gradle/**
 platforms/android/res/drawable-hdpi/**
 platforms/android/res/drawable-land-hdpi/**
+platforms/android/CordovaLib/build/**
 
 # wp8
 platforms/wp8/bin
