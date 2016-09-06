@@ -29,16 +29,16 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 				}
 			});
 			if (data.imagen.thumbnail != undefined){
-				$('#event-image').css("background-image", "url("+data.imagen.thumbnail+")");
+				$('#event-image').css("background-image", "url("+data.imagen.thumbnail.replace(/^http:\/\//i, 'https://')+")");
 			}
 			if (data.agrupador.imagen.thumbnail != undefined){
 // 				console.log(data.agrupador.imagen.thumbnail);
-				$('#esp-image').css("background-image", "url("+data.agrupador.imagen.thumbnail+")");
+				$('#esp-image').css("background-image", "url("+data.agrupador.imagen.thumbnail.replace(/^http:\/\//i, 'https://')+")");
 			}
 			$('#event-esp-link').attr('href', 'agrupador.html#agr-'+data.agrupador.id);
 			$('#event-esp-txt').append("<p>"+data.agrupador.nombre+"</p>");
 			if (data.organizador.imagen.thumbnail != undefined){
-				$('#event-org').append("<img src='"+data.organizador.imagen.thumbnail+"' class='img-responsive' />");
+				$('#event-org').append("<img src='"+data.organizador.imagen.thumbnail.replace(/^http:\/\//i, 'https://')+"' class='img-responsive' />");
 			}
 			$('#event-org').append("<p>"+data.organizador.nombre+"</p>");
 			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
@@ -47,7 +47,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 // 			console.log(height);
 // 			console.log($('.event-date-time').outerHeight(true));
 			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
-			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true));
 			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
 			$('#loading').hide();
@@ -57,7 +57,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 // 			console.log(height);
 // 			console.log($('.event-date-time').outerHeight(true));
 			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
-			$('.img-holder').css('height', $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true));
 			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
 
