@@ -22,6 +22,9 @@ platforms/android/CordovaLib/ant-gen
 platforms/android/CordovaLib/bin
 platforms/android/CordovaLib/gen
 platforms/android/CordovaLib/local.properties
+platforms/android/.gradle/**
+platforms/android/res/drawable-hdpi/**
+platforms/android/res/drawable-land-hdpi/**
 
 # wp8
 platforms/wp8/bin
