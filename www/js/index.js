@@ -10,6 +10,12 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.addLog("Initialize");
+        var uuid = (undefined === device) ? 'ru237287a121a73r82' : device.uuid;
+        ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});    
+        ga('set','checkProtocolTask', null); //just for mobile phonegap application
+        ga('set','checkStorageTask',null);
+        ga('send', 'pageview', {'page': '/agenda-de-la-feria/app-home'}); 
+        this.addLog("initialize 2");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -26,12 +32,6 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         this.addLog("onDeviceReady 1");
-        var uuid = (undefined === device) ? 'ru237287a121a73r82' : device.uuid;
-        ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});    
-        ga('set','checkProtocolTask', null); //just for mobile phonegap application
-        ga('set','checkStorageTask',null);
-        ga('send', 'pageview', {'page': '/agenda-de-la-feria/app-home'}); 
-        this.addLog("onDeviceReady 2");
     },
 
     // Update DOM on a Received Event
