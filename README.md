@@ -1,6 +1,8 @@
 # Feria del libro
 Aplicacion web/mobile con la agenda de la feria del libro.  
+
 Ya disponible en el [market de Android](https://play.google.com/store/apps/details?id=ar.gob.cordoba.gobiernoabierto.feriadellibro).    
+Puede verse tambien [vía web](https://modernizacionmunicba.github.io/feria-del-libro) desde mobile.  
 
 100% HTML5/JS con llamadas al [API de eventos de la Municipalidad de Córdoba](https://gobiernoabierto.cordoba.gob.ar/api/).  
 Se usa como [web](https://modernizacionmunicba.github.io/feria-del-libro/) y embebida vía [Cordova](https://cordova.apache.org/) a aplicación Android.
