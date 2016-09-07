@@ -395,3 +395,42 @@ h1.index-recom{
     padding: 0;
   }
 }
+.logo-muni-letras{
+	position: absolute;
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+	.logo-muni-letras{
+	    margin-left: 100px;
+	}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.logo-muni-letras{
+	    margin-left: 100px;
+	}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	.logo-muni-letras{
+	    margin-left: 20px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.logo-muni-letras{
+		position: absolute;
+	    margin-left: -70px;
+	    margin-top: 35px;
+	    height: 20%;
+	}
+}
