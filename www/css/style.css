@@ -390,6 +390,13 @@ h1.index-recom{
 	border-bottom: 2px solid #eee;
 	margin-bottom: 15px;
 }
+#group-flyer{
+	text-align: center;
+}
+#group-flyer img{
+	max-width: 80%;
+	display: inline;
+}
 
 @media (min-width: 0) {
   .navbar-toggle {
@@ -447,5 +454,8 @@ h1.index-recom{
 	    margin-left: -70px;
 	    margin-top: 35px;
 	    height: 20%;
+	}
+	#group-flyer img{
+		max-width: 100%;
 	}
 }
