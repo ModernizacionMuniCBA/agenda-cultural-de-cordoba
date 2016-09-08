@@ -1,7 +1,7 @@
 var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var gobAbiertoAPI_actividades = "/actividad-publica/"
 		var formatJson = "&format=json";
-		var gobAbiertoAPI_evento = "&evento_id=1"
+// 		var gobAbiertoAPI_evento = "&evento_id=1"
 		var actividad = '';
 		
 		var page_eventos = "&page=";
@@ -24,9 +24,10 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		}		
 		$.ajax({
 			dataType: "json",
-			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+gobAbiertoAPI_evento+page_eventos+pageNumber+page_size_str+pageSize+formatJson,
+			url: gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+page_eventos+pageNumber+page_size_str+pageSize+formatJson,
 			success: handleData
 		});
+		console.log(gobAbiertoAPI+gobAbiertoAPI_actividades+"?"+dataType+"_id="+actividad+gobAbiertoAPI_evento+page_eventos+pageNumber+page_size_str+pageSize+formatJson);
 		function handleData(data) {
 // 			console.log(data);
 			$.each(data.results, function(i, item) {
@@ -56,14 +57,27 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 				htmlPrvNxt += '<li class="next"><a href="agrupador.html#'+string.split('?')[0]+'?page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
 			}
 			htmlPrvNxt += '</div>'
-			$('#event-list').append(htmlPrvNxt);
+			if(data.previous != null || data.next != null){
+				$('#event-list').append(htmlPrvNxt);
+			}
 			
 			if(data.results[0] != undefined){
 				if(dataType == "agrupador"){
 					$('#event-name').html(data.results[0].agrupador.nombre);	
-					$(document).prop('title', data.results[0].agrupador.nombre);
+					if (data.results[0].agrupador.descripcion != ''){
+						$('#group-description').html(data.results[0].agrupador.descripcion);
+					}else{
+						$('#group-description').hide();
+					}
 					if (data.results[0].agrupador.imagen.thumbnail != undefined){
 						$('#event-image').css("background-image", "url("+data.results[0].agrupador.imagen.thumbnail.replace(/^http:\/\//i, 'https://')+")");
+					}
+					if (data.results[0].agrupador.flyer != undefined){
+						if (data.results[0].agrupador.flyer.original != undefined){
+							$('#group-flyer').html('<img src="'+data.results[0].agrupador.flyer.original+'" class="img-responsive"/>');
+						}
+					}else{
+						$('#group-flyer').hide();
 					}
 				}else{
 					$.each(data.results[0].tipos, function(i, tipo) {

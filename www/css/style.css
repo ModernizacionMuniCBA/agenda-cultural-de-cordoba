@@ -1,6 +1,6 @@
 body{
 	padding-top: 220px; 
-	background-color: #fff;
+	background-color: #f7f7f7;
 	font-family: 'Roboto', sans-serif;
 	background-image: none;
 }
@@ -99,11 +99,19 @@ p{
 .img-holder.home{
   min-height: 199px;
 }
-
+.logo-feria{
+	max-width: 200px;
+	width: 100%;
+}
+.logo-feria-muni{
+	max-width: 150px;
+	width: 100%;
+	margin-left: -10px;
+}
 .img-text{
 	text-align: center;
 	color: #fff;
-	padding-top: 85px;
+	padding-top: 45px;
 	font-weight: 200;
 }
 .img-img{
@@ -374,6 +382,13 @@ h1.index-recom{
 }
 .pager li>a, .pager li>span{
 	background-color: transparent;
+}
+
+
+#group-description{
+	padding-bottom: 15px;
+	border-bottom: 2px solid #eee;
+	margin-bottom: 15px;
 }
 
 @media (min-width: 0) {

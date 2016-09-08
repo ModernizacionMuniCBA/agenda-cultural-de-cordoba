@@ -44,12 +44,22 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			}
 			htmlPrvNxt += '</div>'
 			$('#event-list').append(htmlPrvNxt);
-
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true));
+			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 30;
+			$('body').css('padding-top', bottom);
 			$('#loading').hide();
 
 		}
 
 			$(window).on('resize', function(){
-				var bottom = $('.img-holder').position().top + $('.img-holder').outerHeight(true)+10;
-				$('body').css('padding-top', bottom);
+				var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true));
+			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 30;
+			$('body').css('padding-top', bottom);
+			$('#loading').hide();
 			});
