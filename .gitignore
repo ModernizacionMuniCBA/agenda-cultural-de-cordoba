@@ -1,6 +1,7 @@
 *~
 *.apk
 agenda-de-la-feria-key.keystore
+to-market.sh
 
 # Mac
 .DS_Store

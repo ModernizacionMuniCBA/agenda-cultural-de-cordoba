@@ -16,6 +16,7 @@ var app = {
         ga('set','checkStorageTask',null);
         ga('send', 'pageview', {'page': '/agenda-de-la-feria/app-home'}); 
         this.addLog("initialize 2");
+        
         this.bindEvents();
     },
     // Bind Event Listeners
