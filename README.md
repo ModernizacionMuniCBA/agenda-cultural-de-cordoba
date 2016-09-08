@@ -68,6 +68,9 @@ cordova build android --release
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-de-la-feria-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk AgendaDeLaFeria
 
+# borrar el anterior comppilado
+rm platforms/android/build/outputs/apk/AgendaDeLaFeria-release.apk
+
 # revisar el path de zipalign uno por cada version del sdk, em mi caso _android-sdk-linux/build-tools/23.0.3/zipalign_   
 zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/AgendaDeLaFeria-release.apk
 ```
