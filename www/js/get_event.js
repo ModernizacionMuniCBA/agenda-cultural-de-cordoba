@@ -3,10 +3,13 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		var formatJson = "?format=json";
 		var actividad = '';
 		var url = document.location.toString();
+		var page_title = "";
 		if (url.match('#')) {
 			var string = url.split('#')[1];
 			actividad = string.split('-')[1];
 		}
+		var share_url = "https://modernizacionmunicba.github.io/feria-del-libro/www/evento.html#act-"+actividad;
+
 		$.ajax({
 			dataType: "json",
 			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+formatJson,
@@ -16,11 +19,18 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 // 			console.log(data);
 			
 			$('#event-name').html(data.titulo);	
+			page_title = data.titulo;
 			$(document).prop('title', data.titulo);
 			$('#event-date').html(dateFormat(data.inicia, "dddd dd 'de' mmmm"));
 			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
 			$('#event-location').html(data.lugar.nombre);
 			$('#event-info').html(data.descripcion);
+			$("#share").attr("href", url);
+			$('#share-icons').append('<a href="http://twitter.com/share?url='+share_url+'&text='+page_title+'" target="_blank" class="share-btn twitter">Twitter</a>');
+			$('#share-icons').append('<a href="http://www.facebook.com/sharer/sharer.php?u='+share_url+'" target="_blank" class="share-btn facebook">Facebook</a>');
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				$('#share-icons').append('<a href="whatsapp://send?text='+page_title+' '+share_url+'" target="_blank" class="share-btn whatsapp">Whatsapp</a>');
+			}
 			var totalTipos = data.tipos.length;
 			$.each(data.tipos, function(i, tipo) {
 				$('#tags').append('<a href="agrupador.html#tipo-'+tipo.id+'">'+tipo.nombre+'</a>');
