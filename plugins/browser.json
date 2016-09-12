@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
+        }
+    },
+    "dependent_plugins": {}
+}

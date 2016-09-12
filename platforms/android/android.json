@@ -15,6 +15,20 @@
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -27,6 +41,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
         }
     },
     "dependent_plugins": {},
@@ -38,10 +55,19 @@
             "clobbers": [
                 "navigator.splashscreen"
             ]
+        },
+        {
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.2",
-        "cordova-plugin-splashscreen": "3.2.2"
+        "cordova-plugin-splashscreen": "3.2.2",
+        "cordova-plugin-x-socialsharing": "5.1.3"
     }
 }

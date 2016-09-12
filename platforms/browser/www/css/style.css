@@ -1,0 +1,461 @@
+body{
+	padding-top: 220px; 
+	background-color: #f7f7f7;
+	font-family: 'Roboto', sans-serif;
+	background-image: none;
+}
+.navmenu-default, .navbar-default .navbar-offcanvas{
+	background-color: #eee;
+}
+p{
+	font-size: 1em;
+}
+.navbar-feria{
+	color: #FFF;
+	margin-top: 5px;
+	width: 100%;
+}
+.navbar-feria a{
+	color: #FFF;
+	font-size: 20px;
+}
+.navmenu-nav{
+	margin-top: 20px;
+}
+.navbar-feria .icon-bar{
+	background-color: #fff;
+}
+.navbar-feria .navbar-toggle{
+	float: left;
+	margin-left: 2%;
+	z-index: 1000;
+}
+.navbar-feria .navbar-toggle span{
+	background-color: #fff;
+	border: 1px ;
+}
+.navbar-feria .navmenu-brand{
+	margin: 8px 0px;
+	padding: 9px 0px;
+	
+	display: inline-block;
+	text-transform: uppercase;
+}
+.navbar-feria .navmenu-tags{
+	color: #fff;
+	font-size: 1em;	
+}
+.navbar-feria .navmenu-tags a{
+	color: #fff;
+	font-size: 1em;	
+}
+.navbar-feria .navmenu-search{
+	margin: 4px 10px;
+	padding: 9px 9px;
+	float: right;
+	display: inline-block;
+	background-color: transparent;
+	color: #fff;
+	border: none;
+}
+.navbar-feria .navmenu-search:hover{
+	border-radius: 50%;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fff;
+}
+.fixed-img.more_op{
+  opacity: 0.85;
+	
+}
+.fixed-img{
+	position: absolute;
+  background-image: url('../img/image-eventos.png');
+  background-color: #fff; 
+  opacity: 0.5;
+   width: 100%;
+  z-index: 1000;
+  min-height: 150px;
+  background-position: center bottom;
+  background-size: cover;
+}
+.fixed-img.home{
+  min-height: 200px;
+}
+.fixed-img.evento{
+  background-image: url('../img/image-evento.png');
+  opacity: 1;
+  -webkit-filter: brightness(65%);
+}
+.foreground{
+	position: relative;
+	z-index: 1000;
+}
+.img-holder{
+  background-color: #eee;
+  z-index: 1000;
+  min-height: 149px;
+}
+.img-holder.home{
+  min-height: 199px;
+}
+.logo-feria{
+	max-width: 200px;
+	width: 100%;
+}
+.logo-feria-muni{
+	max-width: 150px;
+	width: 100%;
+	margin-left: -10px;
+}
+.img-text{
+	text-align: center;
+	color: #fff;
+	padding-top: 45px;
+	font-weight: 200;
+}
+.img-img{
+	text-align: center;
+	color: #fff;
+	padding-top: 45px;
+	font-weight: 200;
+}
+.text-feria-img{
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.btn-feria{
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	color: #fff;
+	min-width: 125px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.btn-feria.inverted{
+	border: 2px solid #000;
+	color: #000;
+}
+.btn-feria:hover{
+	color: #000;
+	background-color: #fff;
+}
+.btn-feria.not-hover:hover{
+	color: #fff;
+	background-color: transparent;
+}
+.btn-feria.inverted:hover{
+	color: #fff;
+	background-color: #000;
+}
+
+div.circle-image{
+	max-width: 100%;
+	width:100%;
+	height:auto;
+	display:block;
+	padding-top:100%;
+	border-radius:50%;
+	background-position: initial;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+div.circle-image-li{
+	max-width: 80%;
+	width:80%;
+	height:auto;
+	display:block;
+	padding-top:80%;
+	border-radius:50%;
+	background-position: initial;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+h1{
+	font-size: 1.3em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.evento{
+	padding: 5px 0px;
+	color: #000;
+	border-bottom: 1px solid #e0e0e0;
+	text-decoration: none;
+}
+
+.evento:hover{
+	background-color: #f3f3f3;
+}
+
+.evento .event-title{
+	font-size: 1.3em;
+}
+.evento .event-date{
+	font-size: 1em;
+}
+#event-time{
+	text-align: right;
+	margin-right: 5px;
+}
+#event-date{
+	text-align: center;
+}
+.info-evento .event-date{
+	font-size: 1.1em;
+	font-weight: 200;
+}
+.col-xs-offset-4-5{
+	margin-left: 37.5%;	
+}
+
+#event-name{
+	font-weight: 500;
+	color: #fff;
+}
+
+.li-title{
+/* 	border-bottom: 4px solid #4d9e68; */
+	color: #000;
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: 5px;
+	width: 80%;
+	text-align: right;
+}
+
+.li-title-borde {
+ position: absolute;
+ height: 4px;
+ margin-top: -5px;
+ width: 80%;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2cb6b8+0,009c71+100 */
+background: #009c71; /* Old browsers */
+background: -moz-linear-gradient(left, #2CB6B8 0%, #009c71 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #2CB6B8 0%,#009c71 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #2CB6B8 0%,#009c71 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', endColorstr='#009c71',GradientType=0 ); /* IE6-9 */
+
+}
+.navmenu-nav .col-xs-9{
+	padding-top: 7.5px;
+	margin-left: -15px;
+	color: #777;
+}
+.event-date-time{
+	background-image: url('../img/green-bg.png');
+	background-size: cover;
+	width: 100%;
+}
+
+.event-date-time .event-date{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin:0;
+}
+.event-date-time .event-date{
+	font-size: 1.1em;
+	font-weight: 200;
+	color: #fff;
+}
+.event-date-time .event-date.event-time{
+	text-align: right;
+}
+
+.menu-bg-green{
+	background-image: url('../img/green-bg.png'); 
+	width: 100%; 
+	background-size: cover; 
+	height: 35px; 
+	margin-top: -15px;
+}
+.menu-bg{
+	height: 150px; 
+	width: 100%;  
+	background-image: url('../img/menu-bg.png');	
+	background-size: cover; overflow: hidden;
+}
+
+h1.index-recom{
+	margin-top: 27.5px; 
+	margin-bottom: 0px;
+}
+.index-recom-bg{
+	height: 50px; 
+	margin-top: 5px;
+}
+
+.about{
+	background-color: #000;
+	padding-top: 50px !important;
+}
+
+.info-app-version{
+	background-color: #2D2D2D;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #fff;
+	font-weight: 200;
+}
+.info-app-version h1{
+	margin-top: 10px;
+	font-size: 1.1em;
+	text-transform: none;
+	font-weight: 200;
+}
+
+.info-app-version h1.ver-num{
+	text-align: right;
+}
+.feria-logo{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.app-dev{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.app-dev h1{
+	font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin:5px;
+    margin-bottom: 10px;
+}
+.app-dev h2{
+	margin: 5px;;
+	font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#loading{
+	text-align: center;
+	display: inline;
+}
+
+.searchField{
+	display: none;
+}
+.searchField input{
+	padding-left: 10px;
+	width: 100%; 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+	color: #000; 
+	border-top: 5px solid #60B5A3;
+	border-bottom: 5px solid #60B5A3;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+.searchField input:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+#event-esp-txt{
+	text-align: center;
+	color: #000;
+}
+
+.page-prev{
+	margin-left: 5px;	
+}
+
+.page-next{
+	margin-right: 5px;
+}
+.pager li>a, .pager li>span{
+	background-color: transparent;
+}
+
+
+#group-description{
+	padding-bottom: 15px;
+	border-bottom: 2px solid #eee;
+	margin-bottom: 15px;
+}
+#group-flyer{
+	text-align: center;
+}
+#group-flyer img{
+	max-width: 80%;
+	display: inline;
+}
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+  .canvas {
+    padding: 0;
+  }
+}
+.logo-muni-letras{
+	position: absolute;
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+	.logo-muni-letras{
+	    margin-left: 100px;
+	}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.logo-muni-letras{
+	    margin-left: 100px;
+	}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	.logo-muni-letras{
+	    margin-left: 20px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.logo-muni-letras{
+		position: absolute;
+	    margin-left: -70px;
+	    margin-top: 35px;
+	    height: 20%;
+	}
+	#group-flyer img{
+		max-width: 100%;
+	}
+}
