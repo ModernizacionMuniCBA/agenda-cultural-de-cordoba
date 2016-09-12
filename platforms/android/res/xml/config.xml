@@ -11,6 +11,9 @@
     <feature name="SocialSharing">
         <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
     <name>Agenda de la Feria</name>
     <description>
         Agenda completa de eventos de la Feria del Libro de la Ciudad de Córdoba 2016

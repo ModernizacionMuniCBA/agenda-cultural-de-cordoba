@@ -29,6 +29,19 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+        "id": "cordova-plugin-calendar.Calendar",
+        "pluginId": "cordova-plugin-calendar",
+        "clobbers": [
+            "Calendar"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-calendar/test/tests.js",
+        "id": "cordova-plugin-calendar.tests",
+        "pluginId": "cordova-plugin-calendar"
     }
 ];
 module.exports.metadata = 
@@ -36,7 +49,8 @@ module.exports.metadata =
 {
     "cordova-plugin-x-socialsharing": "5.1.3",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-splashscreen": "3.2.2"
+    "cordova-plugin-splashscreen": "3.2.2",
+    "cordova-plugin-calendar": "4.5.3"
 }
 // BOTTOM OF METADATA
 });

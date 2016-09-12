@@ -36,7 +36,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		 			var now = new Date();
 		 			if(event_date_aux > now ){
 			 			if (item.image != undefined ){
-				 			var event_image = item.image.thumbnail.replace(/^http:\/\//i, 'https://');	
+				 			var event_image = item.image.original.replace(/^http:\/\//i, 'https://');	
 			 			}else{
 				 			var event_image = "img/default-event.png";
 			 			}
@@ -69,8 +69,8 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 					}else{
 						$('#group-description').hide();
 					}
-					if (data.results[0].agrupador.imagen.thumbnail != undefined){
-						$('#event-image').css("background-image", "url("+data.results[0].agrupador.imagen.thumbnail.replace(/^http:\/\//i, 'https://')+")");
+					if (data.results[0].agrupador.imagen.original != undefined){
+						$('#event-image').css("background-image", "url("+data.results[0].agrupador.imagen.original.replace(/^http:\/\//i, 'https://')+")");
 					}
 					if (data.results[0].agrupador.flyer != undefined){
 						if (data.results[0].agrupador.flyer.original != undefined){

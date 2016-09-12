@@ -15,6 +15,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
         }
     },
     "dependent_plugins": {}

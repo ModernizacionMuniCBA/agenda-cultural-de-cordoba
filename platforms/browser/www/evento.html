@@ -93,6 +93,10 @@
 		    <div class="col-xs-12 info-evento">
 				<h2 class="event-date" id="event-location"></h2>
 			    <p id="event-info"></p>
+			    <a id="share" href="#" class="share">Compartir</a>
+			    <div class="row" id="share-icons">
+					
+			    </div>
 			    <div class="row">
 				    <div class="col-xs-12 col-sm-3">
 				    <h2 class="event-date">Espacio:</h2>
@@ -127,8 +131,53 @@
  	<script src="js/get_categories.js"></script>
 	<script src="js/get_groups.js"></script>
     <script src="js/search_bar.js"></script>
+	<script>
+		$(document).ready(function() {
+        $('a.calendar').click(function() {
+            			// prep some variables
+		  var startDate = new Date("September 24, 2013 13:00:00");
+		  var endDate = new Date("September 24, 2013 14:30:00");
+		  var title = "My nice event";
+		  var location = "Home";
+		  var notes = "Some notes about this event.";
+		  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+		  var error = function(message) { alert("Error: " + message); };
+		  // create (the only function also supported on Android for now)
+		  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+        });
+        $('a.share').click(function(event) {
+	        	event.preventDefault();
+				var options = {
+		 		  message: page_title, // not supported on some apps (Facebook, Instagram)
+				  url: share_url,
+				  chooserTitle: 'Elegí una app' // Android only, you can override the default share sheet title
+				}
+				
+				var onSuccess = function(result) {
+// 				  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+// 				  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+				}
+				
+				var onError = function(msg) {
+					
+// 				  console.log("Sharing failed with message: " + msg);
+				}
 
+				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);  
+				
+			});
+    });
+    </script>
     <script>
+	    
+			if (window.cordova) {
+			  //do stuff
+			  	$('a.share').show();
+			  	$('#share-icons').hide();
+			}else{
+				$('a.share').hide();
+				$('#share-icons').show();
+			} 
 		if (inCordova) {
 			touchAnalytics('/agenda-de-la-feria/app-evento', 'Evento app feria del libro');
 		} else {
