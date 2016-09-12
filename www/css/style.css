@@ -493,3 +493,12 @@ h1.index-recom{
 .share-btn.linkedin    { background: #4875B4; }
 .share-btn.whatsapp    { background: #00E584; }
 .share-btn.email       { background: #444444; }
+
+
+#share{
+	margin: 10px 0px;
+}
+
+calendar{
+	margin: 10px 0px;
+}

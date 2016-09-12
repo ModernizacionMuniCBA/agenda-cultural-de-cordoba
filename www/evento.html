@@ -93,9 +93,15 @@
 		    <div class="col-xs-12 info-evento">
 				<h2 class="event-date" id="event-location"></h2>
 			    <p id="event-info"></p>
-			    <a id="share" href="#" class="share">Compartir</a>
+			    <div class="row">
+				     <div class="col-xs-12">
+					     <a id="share" href="#" class="btn btn-warning share">Compartir</a>
+				     </div>
+				     <div class="col-xs-12">
+					     <a id="calendario" href="#" class="btn btn-success calendar">Agregar a Calendario</a>
+				     </div>
+			    </div>
 			    <div class="row" id="share-icons">
-					
 			    </div>
 			    <div class="row">
 				    <div class="col-xs-12 col-sm-3">
@@ -137,13 +143,13 @@
 		$(document).ready(function() {
         $('a.calendar').click(function() {
             			// prep some variables
-		  var startDate = new Date("September 24, 2013 13:00:00");
-		  var endDate = new Date("September 24, 2013 14:30:00");
-		  var title = "My nice event";
-		  var location = "Home";
-		  var notes = "Some notes about this event.";
-		  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-		  var error = function(message) { alert("Error: " + message); };
+		  var startDate = start_date;
+		  var endDate = end_date;
+		  var title = page_title;
+		  var location = event_location;
+		  var notes = event_notes;
+		  var success = function(message) { alert("Evento agregado con éxito."); };
+		  var error = function(message) { alert("Error al agregar el evento."); };
 		  // create (the only function also supported on Android for now)
 		  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
         });
@@ -176,8 +182,10 @@
 			  //do stuff
 			  	$('a.share').show();
 			  	$('#share-icons').hide();
+			  	$('#calendario').show();
 			}else{
 				$('a.share').hide();
+				$('#calendario').hide();
 				$('#share-icons').show();
 			} 
 		if (inCordova) {
