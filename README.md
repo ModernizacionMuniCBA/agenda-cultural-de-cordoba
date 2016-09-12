@@ -80,4 +80,9 @@ zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk p
 Cambiar el número de versión y otros detalles en config.xml.  
 
 
+### Plugins y permisos
 
+Usa el plugin [SocialSharing](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin) que requiere permisos de escritura ya que según indica
+```
+For sharing remote images (or other files) on Android, the file needs to be stored locally first, so add this permission to AndroidManifest.xml
+```
