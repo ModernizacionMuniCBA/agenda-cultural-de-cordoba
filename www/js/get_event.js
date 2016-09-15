@@ -34,6 +34,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			end_date = new Date(dateFormat(data.inicia, "mmmm dd, yyyy h:MM TT")).addHours(1);
 			$('#event-name').html(data.titulo);	
 			page_title = data.titulo;
+			$("meta[property='og\\:title']").attr("content", page_title);
 			$(document).prop('title', data.titulo);
 			$('#event-date').html(dateFormat(data.inicia, "dddd dd 'de' mmmm"));
 			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
@@ -80,5 +81,4 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			$('.img-holder').css('height', $('.foreground').outerHeight(true));
 			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
-
 		});
