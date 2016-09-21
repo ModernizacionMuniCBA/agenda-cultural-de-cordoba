@@ -22,18 +22,33 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 		$.ajax({
 			dataType: "json",
 			url: gobAbiertoAPI+gobAbiertoAPI_actividades+actividad+formatJson,
-			success: handleData
+			success: handleData,
+            error: handleError,
 		});
 		var start_date = new Date();
 		var end_date = new Date().addHours(1);
 		var event_notes = "";
 		var event_location = "";
+		function handleError(){
+			$('.event-date').hide();
+			$('#event-esp').hide();
+			$('#event-info').html('Este evento ya no se encuentra disponible');
+			var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
+			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+
+			$('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			$('.img-holder').css('height', $('.foreground').outerHeight(true));
+			bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
+			$('body').css('padding-top', bottom);
+			$('#loading').hide();
+		}
 		function handleData(data) {
 // 			console.log(data);
 			start_date = new Date(dateFormat(data.inicia, "mmmm dd, yyyy h:MM TT"));
 			end_date = new Date(dateFormat(data.inicia, "mmmm dd, yyyy h:MM TT")).addHours(1);
 			$('#event-name').html(data.titulo);	
 			page_title = data.titulo;
+			$("meta[property='og\\:title']").attr("content", page_title);
 			$(document).prop('title', data.titulo);
 			$('#event-date').html(dateFormat(data.inicia, "dddd dd 'de' mmmm"));
 			$('#event-time').html(dateFormat(data.inicia, "h:MM TT"));
@@ -80,5 +95,4 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			$('.img-holder').css('height', $('.foreground').outerHeight(true));
 			var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			$('body').css('padding-top', bottom);
-
 		});
