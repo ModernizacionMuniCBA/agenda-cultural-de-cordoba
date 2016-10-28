@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="ar.gob.cordoba.gobiernoabierto.feriadellibro" 
-    version="1.1.45" 
+    id="ar.gob.cordoba.gobiernoabierto.agendacultural" 
+    version="1.2.15" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Agenda de la Feria</name>
+    <name>Agenda Cultural de Córdoba</name>
     <description>
-        Agenda completa de eventos de la Feria del Libro de la Ciudad de Córdoba 2016
+        Agenda completa de eventos culturales de la Ciudad de Córdoba
     </description>
     <author email="gobiernoabiertocba@gmail.com" href="https://gobiernoabierto.cordoba.gob.ar/">
         Secretaría de Modernización de la Ciudad de Córdoba

@@ -1,16 +1,16 @@
-# Feria del libro
-Aplicacion web/mobile con la agenda de la feria del libro.  
+# Agenda cultural de la Ciudad de Córdoba
+Aplicacion web/mobile con la agenda cultural de la Ciudad.  
 
-Ya disponible en el [market de Android](https://play.google.com/store/apps/details?id=ar.gob.cordoba.gobiernoabierto.feriadellibro).    
-Puede verse tambien [vía web](https://modernizacionmunicba.github.io/feria-del-libro) desde mobile.  
+Ya disponible en el [market de Android](https://play.google.com/store/apps/details?id=ar.gob.cordoba.gobiernoabierto.agendacultural).    
+Puede verse tambien [vía web](https://modernizacionmunicba.github.io/agenda-cultural-de-cordoba) desde mobile.  
 
 100% HTML5/JS con llamadas al [API de eventos de la Municipalidad de Córdoba](https://gobiernoabierto.cordoba.gob.ar/api/).  
-Se usa como [web](https://modernizacionmunicba.github.io/feria-del-libro/) y embebida vía [Cordova](https://cordova.apache.org/) a aplicación Android.
+Se usa como [web](https://modernizacionmunicba.github.io/agenda-cultural-de-cordoba/) y embebida vía [Cordova](https://cordova.apache.org/) a aplicación Android.
 
 Los datos están estructurados como:
- - Eventos: Agrupador principal. En este caso la _Feria del Libro_ es un evento que agrupa todo lo demás. 
- - Agrupador: Grupo de eventos relacionados. Para la feria del libro se definen _espacios_ que cumplirán este rol.
- - Actividades: Cada actividad en particular. 
+ - Eventos: Agrupador principal. 
+ - Agrupador: Grupo de eventos relacionados.
+ - Actividades: Cada actividad en particular. Se pueden buscar por tipos, disciplinas o lugares. 
 
 Los datos sobre las llamadas API para cada objetos estan en [este documento](https://docs.google.com/document/d/1VuhbKmbkRHFx0L2HRRUuWv1HWqfk2LyCPOHAlIgq05g)
 
@@ -23,7 +23,7 @@ Instalar cordova, crear el entorno y agregarle la plataforma Android cómo salid
 ```
 npm install -g cordova
 # ir al directorio donde quiero poner mi app
-cordova create feriadellibro
+cordova create agendacultural
 cordova platform add android
 ```
 
@@ -55,24 +55,24 @@ Se requerirá android-sdk-tools, android-build-tools, java8 (la de Oracle, OpenJ
 No es necesario, el APK ya es funcional
 
 ```
-cordova run feriadellibro
+cordova run agendacultural
 ```
  
 Para compilar con las llaves necesarias y [firmar para el market de android](https://developer.android.com/studio/publish/app-signing.html).  
 
 ```
 #Solo una vez, crear la llave
-keytool -genkey -v -keystore agenda-de-la-feria-key.keystore -alias AgendaDeLaFeria -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore agenda-cultural.keystore -alias AgendaCultural -keyalg RSA -keysize 2048 -validity 10000
 cordova build android --release
 # queda en platforms/android/build/outputs/apk/android-release-unsigned.apk
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-de-la-feria-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk AgendaDeLaFeria
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore agenda-cultural-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk AgendaCultural
 
 # borrar el anterior comppilado
-rm platforms/android/build/outputs/apk/AgendaDeLaFeria-release.apk
+rm platforms/android/build/outputs/apk/AgendaCultural-release.apk
 
 # revisar el path de zipalign uno por cada version del sdk, em mi caso _android-sdk-linux/build-tools/23.0.3/zipalign_   
-zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/AgendaDeLaFeria-release.apk
+zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/AgendaCultural-release.apk
 ```
 
 ### Instrucciones para compilar y publicar
