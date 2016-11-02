@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com; 
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com;
                     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-                    media-src *; 
+                    media-src *;
                     script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
                     font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
-                    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Agenda de la Feria</title>
+    <title>Agenda de Cultura</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500,700" rel="stylesheet">
@@ -28,23 +28,39 @@
     <meta property='og:title' content='Agenda de la Feria'/>
     <meta property="og:image" content="http://modernizacionmunicba.github.io/feria-del-libro/www/img/share-img.png">
   </head>
-  <body>
+  <body class="activity-body">
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-	  <div class="menu-bg"></div>
-	  <div class="menu-bg-green"></div>
-
+	  <!-- <div class="menu-bg"></div> -->
+	  <!-- <div class="menu-bg-green"></div> -->
+    <ul class="nav navmenu-nav">
+      <li>
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <img src="img/logo-cultura.png" class="img-responsive">
+          </div>
+        </div>
+      </li>
+    </ul>
 	  <ul class="nav navmenu-nav">
-	    <li><a href="index.html">INICIO</a></li>
+	    <li class="active"><a href="index.html">INICIO</a></li>
 	  </ul>
-	  <ul class="nav navmenu-nav" id="groups-menu">
-	    <li class="li-title">ESPACIOS</li>
+	  <ul class="nav navmenu-nav" id="events-menu">
+	    <li class="li-title">EVENTOS</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
 	  <ul class="nav navmenu-nav" id="categories-menu">
-	    <li class="li-title">TIPOS</li>
+	    <li class="li-title">TIPO DE ACTIVIDAD</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
-	  <ul class="nav navmenu-nav">
+    <ul class="nav navmenu-nav" id="disciplinas-menu">
+	    <li class="li-title">DISCIPLINAS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+    <ul class="nav navmenu-nav" id="places-menu">
+	    <li class="li-title">LUGARES</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
 	    <li><a href="about.html">SOBRE ESTA APP</a></li>
 	  </ul>
 	</nav>
@@ -54,46 +70,40 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand navmenu-tags" id="tags"></p>
 	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
 	  <div class="searchField">
-		  
+
 		  <div class="row">
 			  <div class="col-xs-12">
 				  <form id="searchForm" action="search.html">
-				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento..">
 				  </form>
 			  </div>
 		  </div>
 	  </div>
-	</div>
-	<div class="img-holder navbar-fixed-top">
-		<div class="fixed-img evento"></div>
-		<div class="foreground">
-			<div class="img-img">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">
-							<div class="circle-image" id="event-image" style="background-image: url('img/default-event.png')"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12"><p class="text-feria-img" id="event-name"></p></div>
-					</div>
+    <div class="row" style="display: inline-block;">
+      <div class="col-xs-3">
+        <div class="evento-img-cont" style="background-image: url(''); margin-left:10px;"></div>
+      </div>
+      <div class="col-xs-9">
+        <h1 class="text-feria-img" id="event-name"></h1>
+        <div class="event-date-time">
+			    <h2 class="event-date" id="event-date-start"></h2>
+					<h2 class="event-date" id="event-date-end"></h2>
 				</div>
-				<div class="event-date-time">
-			    	<h1 class="event-date" id="event-time"></h1>
-					<h1 class="event-date" id="event-date"></h1>
-				</div>
-			</div>
-		</div>
+        <div class="event-tags"></div>
+      </div>
+    </div>
 	</div>
-	
+	<!-- <div class="navbar-fixed-top">
+
+
+	</div> -->
+
     <div class="container">
 	    <div class="row">
 		    <div class="col-xs-12 info-evento">
-				<h2 class="event-date" id="event-location"></h2>
-			    <p id="event-info"></p>
+          <p id="event-info"></p>
 			    <div class="row">
 				     <div class="col-xs-12">
 					     <a id="share" href="#" class="btn btn-warning share">Compartir</a>
@@ -102,11 +112,13 @@
 					     <a id="calendario" href="#" class="btn btn-success calendar">Agregar a Calendario</a>
 				     </div>
 			    </div>
+          <h2 class="event-date" id="event-location"></h2>
+
 			    <div class="row" id="share-icons">
 			    </div>
-			    <div class="row">
+			    <!-- <div class="row">
 				    <div class="col-xs-12 col-sm-3">
-				    <h2 class="event-date">Espacio:</h2>
+				    <h2 class="event-date">Evento:</h2>
 				    <a href="#" id="event-esp-link">
 					    <div id="event-esp">
 						    <div class="row">
@@ -118,13 +130,7 @@
 					    </div>
 					</a>
 				    </div>
-				    <!--
-				    <div class="col-xs-12 col-sm-3">
-					    <h2 class="event-date">Organiza</h2>
-					    <div id="event-org"></div>
-				    </div>
-				    -->
-			    </div>
+			    </div> -->
 			    <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
 		    </div>
 	    </div>
@@ -134,10 +140,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
     <script src="js/dateformat.js"></script>
-    <script src="js/get_event.js"></script>
- 	<script src="js/get_categories.js"></script>
-	<script src="js/get_groups.js"></script>
+    <script src="js/get_activity.js"></script>
+    <!-- BEGIN: MENU  -->
+    <script src="js/get_events.js"></script>
+    <script src="js/get_categories.js"></script>
+    <script src="js/get_places.js"></script>
+    <script src="js/get_disciplinas.js"></script>
     <script src="js/search_bar.js"></script>
+    <!--  END: MENU -->
     <script type="text/javascript" src="js/SocialSharing.js"></script>
     <script type="text/javascript" src="js/Calendar.js"></script>
 	<script>
@@ -161,24 +171,24 @@
 				  url: share_url,
 				  chooserTitle: 'Elegí una app' // Android only, you can override the default share sheet title
 				}
-				
+
 				var onSuccess = function(result) {
 // 				  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
 // 				  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
 				}
-				
+
 				var onError = function(msg) {
-					
+
 // 				  console.log("Sharing failed with message: " + msg);
 				}
 
-				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);  
-				
+				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+
 			});
     });
     </script>
     <script>
-	    
+
 			if (window.cordova) {
 			  //do stuff
 			  	$('a.share').show();
@@ -188,7 +198,7 @@
 				$('a.share').hide();
 				$('#calendario').hide();
 				$('#share-icons').show();
-			} 
+			}
 		if (inCordova) {
 			touchAnalytics('/agenda-de-la-feria/app-evento', 'Evento app feria del libro');
 		} else {

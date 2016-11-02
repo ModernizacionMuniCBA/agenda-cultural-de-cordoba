@@ -2,14 +2,12 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-
-    <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com; 
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com;
                     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-                    media-src *; 
+                    media-src *;
                     script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
                     font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Agenda de la Feria</title>
@@ -25,25 +23,41 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/index.js"></script>
-    
+
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-	  <div class="menu-bg"></div>
-	  <div class="menu-bg-green"></div>
-
+	  <!-- <div class="menu-bg"></div> -->
+	  <!-- <div class="menu-bg-green"></div> -->
+    <ul class="nav navmenu-nav">
+      <li>
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <img src="img/logo-cultura.png" class="img-responsive">
+          </div>
+        </div>
+      </li>
+    </ul>
 	  <ul class="nav navmenu-nav">
-	    <li><a href="index.html">INICIO</a></li>
+	    <li class="active"><a href="index.html">INICIO</a></li>
 	  </ul>
-	  <ul class="nav navmenu-nav" id="groups-menu">
-	    <li class="li-title">ESPACIOS</li>
+	  <ul class="nav navmenu-nav" id="events-menu">
+	    <li class="li-title">EVENTOS</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
 	  <ul class="nav navmenu-nav" id="categories-menu">
-	    <li class="li-title">ACTIVIDADES</li>
+	    <li class="li-title">TIPO DE ACTIVIDAD</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
-	  <ul class="nav navmenu-nav">
+    <ul class="nav navmenu-nav" id="disciplinas-menu">
+	    <li class="li-title">DISCIPLINAS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+    <ul class="nav navmenu-nav" id="places-menu">
+	    <li class="li-title">LUGARES</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
 	    <li><a href="about.html">SOBRE ESTA APP</a></li>
 	  </ul>
 	</nav>
@@ -53,21 +67,20 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand">Espacios</p>
 	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
-	  <div class="searchField">
-		  
+    <div class="row"><div class="col-xs-12"><p class="navmenu-brand"></p></div></div>
+    <div class="searchField">
+
 		  <div class="row">
 			  <div class="col-xs-12">
 				  <form id="searchForm" action="search.html">
-				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento..">
 				  </form>
 			  </div>
 		  </div>
 	  </div>
 	</div>
-	
-	<div class="img-holder navbar-fixed-top">
+	<!-- <div class="img-holder navbar-fixed-top">
 		<div class="fixed-img evento"></div>
 		<div class="foreground">
 			<div class="img-img">
@@ -86,12 +99,30 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	
+
     <div class="container">
+	    <div id="group-description">
+	    </div>
+      <!-- <div class="row evento-card">
+        <div class="col-xs-3 act-card-img">
+          <div class="evento-img-cont no-margin-img" style="background-image: url('img/image-eventos.png');"></div>
+        </div>
+        <div class="col-xs-9">
+          <span class="event-title">Ronda de cuentos de “Vení que Te cuento”</span><br/>
+          <span class="event-text">Viernes 04 de Noviembre, 7:00 PM</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="event-divider"></div>
+      </div> -->
 	    <div id="event-list">
 		    <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
+        <!-- <div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('img/image-eventos.png');"></div></div> -->
+		    </div>
+	    </div>
+	    <div id="group-flyer">
 	    </div>
     </div><!-- /.container -->
 
@@ -102,11 +133,15 @@
     <script src="js/dateformat.js"></script>
     <script src="js/page_size.js"></script>
     <script src="js/url_spliter.js"></script>
-    <script src="js/get_groups.js"></script>
-    <script src="js/get_agrupador.js"></script>
-	<script src="js/get_categories.js"></script>
-	<script src="js/h_scroll.js"></script>
+    <script src="js/get_evento.js"></script>
+    <!-- BEGIN: MENU  -->
+    <script src="js/get_events.js"></script>
+    <script src="js/get_categories.js"></script>
+    <script src="js/get_places.js"></script>
+    <script src="js/get_disciplinas.js"></script>
     <script src="js/search_bar.js"></script>
+    <!--  END: MENU -->
+	  <script src="js/h_scroll.js"></script>
 
 	<script>
 	window.onhashchange = function() {
@@ -116,11 +151,11 @@
 
 	<script>
 		if (inCordova) {
-			touchAnalytics('/agenda-de-la-feria/app-about', 'About app feria del libro');
+			touchAnalytics('/agenda-de-la-feria/app-agrupador', 'Agrupador app feria del libro');
 		} else {
 			ga('send', 'pageview');
 		}
     </script>
-    
+
   </body>
 </html>

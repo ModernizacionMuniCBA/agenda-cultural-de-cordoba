@@ -1,6 +1,6 @@
 body{
-	padding-top: 220px; 
-	background-color: #f7f7f7;
+	padding-top: 75px;
+	background-color: #FFF;
 	font-family: 'Roboto', sans-serif;
 	background-image: none;
 }
@@ -10,20 +10,141 @@ body{
 p{
 	font-size: 1em;
 }
-.navbar-feria{
-	color: #FFF;
-	margin-top: 5px;
+
+.vermas{
+	color: #8DC9C9;
+}
+.act-card-holder{
+	width: 85%;
+	padding-left: 20px;
+	margin: 0 auto;
+	min-height: 100px;
+	margin-bottom: 20px;
+}
+
+.act-card-info{
+	color: #000;
+}
+.act-card{
 	width: 100%;
+	/*height: 200px;*/
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
+	/*padding-left: 40px;*/
+}
+.act-card .card-title{
+	font-size: 1.4em;
+	margin-left: 40px;
+	text-align: left;
+	text-transform: none;
+	color: #8DC9C9;
+	font-weight: 200;
+}
+.act-card .event-date{
+	text-align: right;
+	margin-left:-10px;
+	margin-right: 10px;
+	margin-top:30px;
+	font-weight: 400 !important;
+	font-size: 1em;
+	line-height: 1.3em;
+	/*font-family: inherit;*/
+	color: #A8B5B9;
+}
+.act-card .event-divider{
+  height: 2px;
+  width: 20px;
+	margin-left: 45px;
+	margin-top: -5px;
+  background-color: #575e66;
+	margin-bottom: 15px;
+  /*margin-left: 5px;*/
+}
+
+.act-card-info{
+	text-transform: none;
+	padding-right: 30px;
+}
+
+.evento-img-cont {
+    width: 75px;
+    height: 100px;
+		margin-left: -20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.act-card-info{
+	min-height: 120px;
+	padding-top: 5px;
+	/*background: #A8B5B9;*/
+}
+
+.act-card-icons{
+	min-height: 30px;
+}
+
+.event-divider{
+  height: 2px;
+  width: 30px;
+  background-color: #575e66;
+  margin-left: 15px;
+	margin-top: 10px;
+}
+
+.no-margin-img{
+	margin: 0;
+}
+.evento-card{
+	margin-top: 20px;
+}
+
+.evento-card .event-title {
+    font-size: 1.3em;
+		margin-top: 20px;
+}
+
+.evento-card .event-date {
+    font-size: 1em;
+		color: #A8B5B9;
+}
+
+.navbar-feria{
+	background-color: #fff;
+	color: #8DC9C9;
+	padding-top: 5px;
+	width: 100%;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+}
+
+.version-title{
+	font-size: 1.4em;
+	color: #FFF;
+	text-align: left;
+}
+.version-number{
+	font-size: 1.2em;
+	color: #FFF;
+	text-align: right;
 }
 .navbar-feria a{
-	color: #FFF;
+	color: #8DC9C9;
 	font-size: 20px;
 }
 .navmenu-nav{
 	margin-top: 20px;
 }
 .navbar-feria .icon-bar{
-	background-color: #fff;
+	background-color: #8DC9C9;
 }
 .navbar-feria .navbar-toggle{
 	float: left;
@@ -31,23 +152,23 @@ p{
 	z-index: 1000;
 }
 .navbar-feria .navbar-toggle span{
-	background-color: #fff;
+	background-color: #8DC9C9;
 	border: 1px ;
 }
 .navbar-feria .navmenu-brand{
-	margin: 8px 0px;
-	padding: 9px 0px;
-	
+	/*margin: 8px 0px;*/
+	/*padding: 9px 0px;*/
+
 	display: inline-block;
 	text-transform: uppercase;
 }
 .navbar-feria .navmenu-tags{
-	color: #fff;
-	font-size: 1em;	
+	color: #8DC9C9;
+	font-size: 1em;
 }
 .navbar-feria .navmenu-tags a{
-	color: #fff;
-	font-size: 1em;	
+	color: #8DC9C9;
+	font-size: 1em;
 }
 .navbar-feria .navmenu-search{
 	margin: 4px 10px;
@@ -55,7 +176,7 @@ p{
 	float: right;
 	display: inline-block;
 	background-color: transparent;
-	color: #fff;
+	color: #8DC9C9;
 	border: none;
 }
 .navbar-feria .navmenu-search:hover{
@@ -66,12 +187,12 @@ p{
 }
 .fixed-img.more_op{
   opacity: 0.85;
-	
+
 }
 .fixed-img{
 	position: absolute;
   background-image: url('../img/image-eventos.png');
-  background-color: #fff; 
+  background-color: #fff;
   opacity: 0.5;
    width: 100%;
   z-index: 1000;
@@ -214,17 +335,44 @@ h1{
 #event-date{
 	text-align: center;
 }
+.info-evento{
+	background-color: #F2F2F2;
+}
+p#event-info{
+	margin-top: 20px;
+	color: #A8B5B9;
+}
+#event-location{
+	margin-bottom: 20px;
+}
+
+.event-tags{
+	margin-left: 5px;
+}
+.activity-body{
+	background-color: #F2F2F2;
+}
+.event-tags .tag{
+	padding:5px 10px;
+	margin: 10px 5px;
+	background-color: #8DC9C9;
+	color: #fff;
+	border-radius: 5px;
+}
 .info-evento .event-date{
 	font-size: 1.1em;
 	font-weight: 200;
 }
 .col-xs-offset-4-5{
-	margin-left: 37.5%;	
+	margin-left: 37.5%;
 }
 
 #event-name{
-	font-weight: 500;
-	color: #fff;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #8DC9C9;
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .li-title{
@@ -242,23 +390,17 @@ h1{
  height: 4px;
  margin-top: -5px;
  width: 80%;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2cb6b8+0,009c71+100 */
-background: #009c71; /* Old browsers */
-background: -moz-linear-gradient(left, #2CB6B8 0%, #009c71 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, #2CB6B8 0%,#009c71 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, #2CB6B8 0%,#009c71 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', endColorstr='#009c71',GradientType=0 ); /* IE6-9 */
+background: #00892D; /* Old browsers */
+/*background: -moz-linear-gradient(left, #2CB6B8 0%, #009c71 100%);
+background: -webkit-linear-gradient(left, #2CB6B8 0%,#009c71 100%);
+background: linear-gradient(to right, #2CB6B8 0%,#009c71 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', endColorstr='#009c71',GradientType=0 );*/
 
 }
 .navmenu-nav .col-xs-9{
 	padding-top: 7.5px;
 	margin-left: -15px;
 	color: #777;
-}
-.event-date-time{
-	background-image: url('../img/green-bg.png');
-	background-size: cover;
-	width: 100%;
 }
 
 .event-date-time .event-date{
@@ -267,35 +409,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', end
 	margin:0;
 }
 .event-date-time .event-date{
-	font-size: 1.1em;
+	font-size: 1.0em;
+	margin-left: 10px;
+	margin-top: -5px;
 	font-weight: 200;
-	color: #fff;
-}
-.event-date-time .event-date.event-time{
-	text-align: right;
+	color: #A8B5B9;
 }
 
 .menu-bg-green{
-	background-image: url('../img/green-bg.png'); 
-	width: 100%; 
-	background-size: cover; 
-	height: 35px; 
+	background-image: url('../img/green-bg.png');
+	width: 100%;
+	background-size: cover;
+	height: 35px;
 	margin-top: -15px;
 }
 .menu-bg{
-	height: 150px; 
-	width: 100%;  
-	background-image: url('../img/menu-bg.png');	
+	height: 150px;
+	width: 100%;
+	background-image: url('../img/menu-bg.png');
 	background-size: cover; overflow: hidden;
 }
-
-h1.index-recom{
-	margin-top: 27.5px; 
-	margin-bottom: 0px;
+.index-recom{
+	font-size: 1.1em;
+	text-align: center;
+	margin-top: 10px;
 }
-.index-recom-bg{
-	height: 50px; 
-	margin-top: 5px;
+.results-divider{
+	height: 2px;
+	width: 55%;
+	margin: 0 auto;
+	background-color: #575E66;
+		margin-bottom: 30px;
 }
 
 .about{
@@ -354,10 +498,10 @@ h1.index-recom{
 }
 .searchField input{
 	padding-left: 10px;
-	width: 100%; 
-	padding-top: 5px; 
-	padding-bottom: 5px; 
-	color: #000; 
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #000;
 	border-top: 5px solid #60B5A3;
 	border-bottom: 5px solid #60B5A3;
 	border-left: 1px solid white;
@@ -374,7 +518,7 @@ h1.index-recom{
 }
 
 .page-prev{
-	margin-left: 5px;	
+	margin-left: 5px;
 }
 
 .page-next{
@@ -405,9 +549,9 @@ h1.index-recom{
 }
 
 @media (min-width: 992px) {
-  body {
+  /*body {
     padding: 0;
-  }
+  }*/
   .navbar {
     right: auto;
     background: none;
@@ -496,6 +640,9 @@ h1.index-recom{
 
 
 #share{
+	margin: 10px 0px;
+}
+#share-icons{
 	margin: 10px 0px;
 }
 

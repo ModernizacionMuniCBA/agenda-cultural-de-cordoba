@@ -2,13 +2,13 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com; 
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com;
                     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-                    media-src *; 
+                    media-src *;
                     script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
                     font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
-                    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Agenda de la Feria</title>
@@ -24,25 +24,41 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/index.js"></script>
-    
+
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-	  <div class="menu-bg"></div>
-	  <div class="menu-bg-green"></div>
-
+	  <!-- <div class="menu-bg"></div> -->
+	  <!-- <div class="menu-bg-green"></div> -->
+    <ul class="nav navmenu-nav">
+      <li>
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <img src="img/logo-cultura.png" class="img-responsive">
+          </div>
+        </div>
+      </li>
+    </ul>
 	  <ul class="nav navmenu-nav">
-	    <li><a href="index.html">INICIO</a></li>
+	    <li class="active"><a href="index.html">INICIO</a></li>
 	  </ul>
-	  <ul class="nav navmenu-nav" id="groups-menu">
-	    <li class="li-title">ESPACIOS</li>
+	  <ul class="nav navmenu-nav" id="events-menu">
+	    <li class="li-title">EVENTOS</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
 	  <ul class="nav navmenu-nav" id="categories-menu">
-	    <li class="li-title">ACTIVIDADES</li>
+	    <li class="li-title">TIPO DE ACTIVIDAD</li>
 	    <div class="li-title-borde"></div>
 	  </ul>
-	  <ul class="nav navmenu-nav">
+    <ul class="nav navmenu-nav" id="disciplinas-menu">
+	    <li class="li-title">DISCIPLINAS</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+    <ul class="nav navmenu-nav" id="places-menu">
+	    <li class="li-title">LUGARES</li>
+	    <div class="li-title-borde"></div>
+	  </ul>
+	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
 	    <li><a href="about.html">SOBRE ESTA APP</a></li>
 	  </ul>
 	</nav>
@@ -52,34 +68,26 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand">Espacios</p>
+	  <p class="navmenu-brand">Búsqueda</p>
 	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
 	  <div class="searchField">
-		  
+
 		  <div class="row">
 			  <div class="col-xs-12">
 				  <form id="searchForm" action="search.html">
-				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento.."> 
+				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento..">
 				  </form>
 			  </div>
 		  </div>
 	  </div>
 	</div>
-	
-	<div class="img-holder home navbar-fixed-top">
-		<div class="fixed-img home more_op"></div>
-		<div class="foreground">
-			<div class="img-text">
-				<p class="text-feria-img">Búsqueda: </p>
-				<p class="btn btn-feria not-hover" id="searched-string"></p>
-				<div class="event-date-time index-recom-bg">
-			    	<div class="col-xs-12"><h1 class="index-recom">Resultados de tu búsqueda</h1></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+
+
     <div class="container">
+      <p class="text-feria-img">Búsqueda: <span id="searched-string"></span> </p>
+      <div class="col-xs-12"><h1 class="index-recom">Resultados de tu búsqueda</h1></div>
+      <div class="col-xs-12"><div class="results-divider"></div></div>
+
 	    <div id="event-list">
 		     <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
 	    </div>
@@ -92,11 +100,15 @@
     <script src="js/page_size.js"></script>
     <script src="js/url_spliter.js"></script>
     <script src="js/dateformat.js"></script>
-	<script src="js/get_categories.js"></script>
-	<script src="js/get_groups.js"></script>
-	<script src="js/h_scroll.js"></script>
+    <!-- BEGIN: MENU  -->
+    <script src="js/get_events.js"></script>
+    <script src="js/get_categories.js"></script>
+    <script src="js/get_places.js"></script>
+    <script src="js/get_disciplinas.js"></script>
     <script src="js/search_bar.js"></script>
-    <script src="js/get_search_results.js"></script>   
+    <!--  END: MENU -->
+	<script src="js/h_scroll.js"></script>
+    <script src="js/get_search_results.js"></script>
 
 	<script>
 		if (inCordova) {
