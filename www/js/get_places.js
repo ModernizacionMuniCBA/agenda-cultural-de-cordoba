@@ -2,7 +2,6 @@
 		var gobAbiertoAPI_categories = "/lugar-actividad/"
 		var gobAbiertoAPI_audiencia = "?audiencia_id=4"
 		var formatJson = "&format=json";
-// https://gobiernoabierto.cordoba.gob.ar/api/tipo-actividad/?audiencia_id=4
 		$.ajax({
 			dataType: "json",
 			url: gobAbiertoAPI+gobAbiertoAPI_categories+gobAbiertoAPI_audiencia+formatJson,
