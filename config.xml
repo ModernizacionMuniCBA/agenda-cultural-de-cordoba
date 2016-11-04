@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
     id="ar.gob.cordoba.gobiernoabierto.agendacultural" 
-    version="1.2.15" 
+    version="1.2.152" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Agenda Cultural de Córdoba</name>
@@ -24,7 +24,7 @@
 
     <platform name="android">
         <icon src="www/res/icono-64x64.png" density="hdpi" />
-        <splash src="www/res/splash-app-feria-del-libro.png" density="land-hdpi"/>
+        <splash src="www/res/splash.png" width="202" height="202" density="mdpi"/>
         <allow-intent href="market:*" />
 
     </platform>
