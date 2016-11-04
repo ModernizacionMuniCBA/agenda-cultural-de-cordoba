@@ -5,19 +5,91 @@ body{
 	background-image: none;
 }
 .navmenu-default, .navbar-default .navbar-offcanvas{
-	background-color: #eee;
+	background-color: #fff;
+	overflow-x: hidden;
+}
+
+.row-li-tipo{
+	/*margin-top:5px; margin-left:5px;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.act-card-img{
+	padding-left: 0px;
+}
+
+.navmenu-default .navmenu-nav>.active>a,
+.navbar-default .navbar-offcanvas .navmenu-nav>.active>a,
+.navmenu-default .navmenu-nav>.active>a:hover,
+.navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover,
+.navmenu-default .navmenu-nav>.active>a:focus,
+.navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus{
+	background-color: #fff;
+	font-weight: bolder;
 }
 p{
 	font-size: 1em;
 }
-
-.vermas{
-	color: #8DC9C9;
+.panel-group .panel+.panel{
+	margin-top: 0px;
 }
+
+.panel-group .panel{
+	border-radius: 0px;
+}
+.panel-default{
+	border-left: none;
+	border-right: none;
+}
+.panel-default>.panel-heading{
+	background-color: #f0f0f0;
+	border-left: none;
+	border-right: none;
+	color: #2b8838;
+}
+
+.panel-default>.panel-heading.collapsed{
+	background-color: #fff;
+	color: #000;
+}
+.panel-title{
+	font-size: 1em;
+}
+
+.panel-title a{
+	font-size: 1em;
+	font-weight: 400;
+}
+.panel-title a:hover{
+	text-decoration: none;
+}
+.panel-default>.panel-heading{
+	border-radius: 0px;
+}
+
+.filtro-title{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	font-size: 1.4em;
+}
+
+.navbar-feria .navmenu-brand.filtro-title{
+	font-size: 1.3em;
+}
+
+.navbar-muni{
+	max-height: 40px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
 .act-card-holder{
-	width: 85%;
+	/*width: 85%;
+	margin: 0 auto;*/
 	padding-left: 20px;
-	margin: 0 auto;
 	min-height: 100px;
 	margin-bottom: 20px;
 }
@@ -26,8 +98,10 @@ p{
 	color: #000;
 }
 .act-card{
-	width: 100%;
+	/*width: 100%;*/
 	/*height: 200px;*/
+	width: 85%;
+	margin: 0 auto;
 	border-radius: 3px;
 	-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
@@ -39,28 +113,27 @@ p{
 	margin-left: 40px;
 	text-align: left;
 	text-transform: none;
-	color: #8DC9C9;
-	font-weight: 200;
+	color: #2b8838;
+	font-weight: 300;
 }
 .act-card .event-date{
 	text-align: right;
 	margin-left:-10px;
 	margin-right: 10px;
 	margin-top:30px;
-	font-weight: 400 !important;
+	font-weight: 300;
 	font-size: 1em;
 	line-height: 1.3em;
 	/*font-family: inherit;*/
 	color: #A8B5B9;
 }
 .act-card .event-divider{
-  height: 2px;
-  width: 20px;
-	margin-left: 45px;
+  height: 1px;
+  width: 25px;
+	margin-left: 40px;
 	margin-top: -5px;
-  background-color: #575e66;
+  background-color: #93A8AC;
 	margin-bottom: 15px;
-  /*margin-left: 5px;*/
 }
 
 .act-card-info{
@@ -91,14 +164,22 @@ p{
 	min-height: 30px;
 }
 
-.event-divider{
-  height: 2px;
-  width: 30px;
-  background-color: #575e66;
-  margin-left: 15px;
-	margin-top: 10px;
+.icon-act-card{
+	margin-right: 10px;
+	color: #93A8AC;
 }
 
+.event-divider{
+  height: 1px;
+  width: 25px;
+  background-color: #93A8AC;
+  /*margin-left: 15px;*/
+	margin-top: 20px;
+}
+
+.padding-15{
+	padding-left: 15px;
+}
 .no-margin-img{
 	margin: 0;
 }
@@ -118,7 +199,7 @@ p{
 
 .navbar-feria{
 	background-color: #fff;
-	color: #8DC9C9;
+	color: #2b8838;
 	padding-top: 5px;
 	width: 100%;
 	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
@@ -137,37 +218,45 @@ p{
 	text-align: right;
 }
 .navbar-feria a{
-	color: #8DC9C9;
+	color: #2b8838;
 	font-size: 20px;
 }
-.navmenu-nav{
-	margin-top: 20px;
+
+.img-menu-cultura{
+	margin-top: 5px;
+	margin-left: 5px;
+	max-height: 50px;
+}
+.img-menu-muni{
+	margin-top: 5px;
+	margin-left: -5px;
 }
 .navbar-feria .icon-bar{
-	background-color: #8DC9C9;
+	background-color: #575E66;
 }
 .navbar-feria .navbar-toggle{
 	float: left;
 	margin-left: 2%;
+	margin-right: 0px;
 	z-index: 1000;
 }
 .navbar-feria .navbar-toggle span{
-	background-color: #8DC9C9;
+	background-color: #575E66;
 	border: 1px ;
 }
 .navbar-feria .navmenu-brand{
-	/*margin: 8px 0px;*/
+	margin: 5px 0px;
 	/*padding: 9px 0px;*/
-
-	display: inline-block;
+	font-size: 1em;
+	/*display: inline-block;*/
 	text-transform: uppercase;
 }
 .navbar-feria .navmenu-tags{
-	color: #8DC9C9;
+	color: #2b8838;
 	font-size: 1em;
 }
 .navbar-feria .navmenu-tags a{
-	color: #8DC9C9;
+	color: #2b8838;
 	font-size: 1em;
 }
 .navbar-feria .navmenu-search{
@@ -176,7 +265,7 @@ p{
 	float: right;
 	display: inline-block;
 	background-color: transparent;
-	color: #8DC9C9;
+	color: #2b8838;
 	border: none;
 }
 .navbar-feria .navmenu-search:hover{
@@ -185,92 +274,12 @@ p{
 	color: #000;
 	border: 1px solid #fff;
 }
-.fixed-img.more_op{
-  opacity: 0.85;
 
-}
-.fixed-img{
-	position: absolute;
-  background-image: url('../img/image-eventos.png');
-  background-color: #fff;
-  opacity: 0.5;
-   width: 100%;
-  z-index: 1000;
-  min-height: 150px;
-  background-position: center bottom;
-  background-size: cover;
-}
-.fixed-img.home{
-  min-height: 200px;
-}
-.fixed-img.evento{
-  background-image: url('../img/image-evento.png');
-  opacity: 1;
-  -webkit-filter: brightness(65%);
-}
-.foreground{
-	position: relative;
-	z-index: 1000;
-}
-.img-holder{
-  background-color: #eee;
-  z-index: 1000;
-  min-height: 149px;
-}
-.img-holder.home{
-  min-height: 199px;
-}
-.logo-feria{
-	max-width: 200px;
-	width: 100%;
-}
-.logo-feria-muni{
-	max-width: 150px;
-	width: 100%;
-	margin-left: -10px;
-}
-.img-text{
-	text-align: center;
-	color: #fff;
-	padding-top: 45px;
-	font-weight: 200;
-}
-.img-img{
-	text-align: center;
-	color: #fff;
-	padding-top: 45px;
-	font-weight: 200;
-}
 .text-feria-img{
 	text-transform: uppercase;
 	font-weight: 500;
 }
-.btn-feria{
-	background-color: transparent;
-	border: 2px solid #fff;
-	border-radius: 30px;
-	color: #fff;
-	min-width: 125px;
-	margin-bottom: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-.btn-feria.inverted{
-	border: 2px solid #000;
-	color: #000;
-}
-.btn-feria:hover{
-	color: #000;
-	background-color: #fff;
-}
-.btn-feria.not-hover:hover{
-	color: #fff;
-	background-color: transparent;
-}
-.btn-feria.inverted:hover{
-	color: #fff;
-	background-color: #000;
-}
+
 
 div.circle-image{
 	max-width: 100%;
@@ -294,7 +303,9 @@ div.circle-image-li{
 	height:auto;
 	display:block;
 	padding-top:80%;
-	border-radius:50%;
+	/*border-radius:50%;*/
+	border-radius: 5px;
+	border: 1px solid #f0f0f0;
 	background-position: initial;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -318,10 +329,6 @@ h1{
 	text-decoration: none;
 }
 
-.evento:hover{
-	background-color: #f3f3f3;
-}
-
 .evento .event-title{
 	font-size: 1.3em;
 }
@@ -336,7 +343,7 @@ h1{
 	text-align: center;
 }
 .info-evento{
-	background-color: #F2F2F2;
+	background-color: #FFF;
 }
 p#event-info{
 	margin-top: 20px;
@@ -349,13 +356,10 @@ p#event-info{
 .event-tags{
 	margin-left: 5px;
 }
-.activity-body{
-	background-color: #F2F2F2;
-}
 .event-tags .tag{
 	padding:5px 10px;
 	margin: 10px 5px;
-	background-color: #8DC9C9;
+	background-color: #2b8838;
 	color: #fff;
 	border-radius: 5px;
 }
@@ -363,110 +367,38 @@ p#event-info{
 	font-size: 1.1em;
 	font-weight: 200;
 }
-.col-xs-offset-4-5{
-	margin-left: 37.5%;
+.info-evento #event-location.event-date{
+	font-weight: 300;
 }
+
 
 #event-name{
 	font-size: 1.2em;
 	font-weight: 300;
-	color: #8DC9C9;
+	color: #2b8838;
 	margin-left: 10px;
+	margin-right: 10px;
 	margin-top: 10px;
+	font-family: 'Roboto', sans-serif;
 }
 
-.li-title{
-/* 	border-bottom: 4px solid #4d9e68; */
-	color: #000;
-	font-weight: bold;
-	font-size: 1.1em;
-	padding: 5px;
-	width: 80%;
-	text-align: right;
-}
 
-.li-title-borde {
- position: absolute;
- height: 4px;
- margin-top: -5px;
- width: 80%;
-background: #00892D; /* Old browsers */
-/*background: -moz-linear-gradient(left, #2CB6B8 0%, #009c71 100%);
-background: -webkit-linear-gradient(left, #2CB6B8 0%,#009c71 100%);
-background: linear-gradient(to right, #2CB6B8 0%,#009c71 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', endColorstr='#009c71',GradientType=0 );*/
-
-}
-.navmenu-nav .col-xs-9{
+.navmenu-nav .nombre-tipo{
 	padding-top: 7.5px;
 	margin-left: -15px;
 	color: #777;
 }
 
+
 .event-date-time .event-date{
+	font-size: 1.0em;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin:0;
-}
-.event-date-time .event-date{
-	font-size: 1.0em;
 	margin-left: 10px;
 	margin-top: -5px;
-	font-weight: 200;
+	font-weight: 500;
 	color: #A8B5B9;
-}
-
-.menu-bg-green{
-	background-image: url('../img/green-bg.png');
-	width: 100%;
-	background-size: cover;
-	height: 35px;
-	margin-top: -15px;
-}
-.menu-bg{
-	height: 150px;
-	width: 100%;
-	background-image: url('../img/menu-bg.png');
-	background-size: cover; overflow: hidden;
-}
-.index-recom{
-	font-size: 1.1em;
-	text-align: center;
-	margin-top: 10px;
-}
-.results-divider{
-	height: 2px;
-	width: 55%;
-	margin: 0 auto;
-	background-color: #575E66;
-		margin-bottom: 30px;
-}
-
-.about{
-	background-color: #000;
-	padding-top: 50px !important;
-}
-
-.info-app-version{
-	background-color: #2D2D2D;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	color: #fff;
-	font-weight: 200;
-}
-.info-app-version h1{
-	margin-top: 10px;
-	font-size: 1.1em;
-	text-transform: none;
-	font-weight: 200;
-}
-
-.info-app-version h1.ver-num{
-	text-align: right;
-}
-.feria-logo{
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 .app-dev{
@@ -511,107 +443,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', end
     outline: none !important;
     box-shadow: none;
 }
-
-#event-esp-txt{
-	text-align: center;
-	color: #000;
-}
-
 .page-prev{
-	margin-left: 5px;
+	margin-left: 25px;
+	color: #2b8838;
 }
 
 .page-next{
-	margin-right: 5px;
+	margin-right: 25px;
+	color: #2b8838;
 }
 .pager li>a, .pager li>span{
 	background-color: transparent;
 }
-
-
-#group-description{
-	padding-bottom: 15px;
-	border-bottom: 2px solid #eee;
-	margin-bottom: 15px;
-}
-#group-flyer{
-	text-align: center;
-}
-#group-flyer img{
-	max-width: 80%;
-	display: inline;
-}
-
-@media (min-width: 0) {
-  .navbar-toggle {
-    display: block; /* force showing the toggle */
-  }
-}
-
-@media (min-width: 992px) {
-  /*body {
-    padding: 0;
-  }*/
-  .navbar {
-    right: auto;
-    background: none;
-    border: none;
-  }
-  .canvas {
-    padding: 0;
-  }
-}
-.logo-muni-letras{
-	position: absolute;
-}
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-	.logo-muni-letras{
-	    margin-left: 100px;
-	}
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-	.logo-muni-letras{
-	    margin-left: 100px;
-	}
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-	.logo-muni-letras{
-	    margin-left: 20px;
-	}
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-	.logo-muni-letras{
-		position: absolute;
-	    margin-left: -70px;
-	    margin-top: 35px;
-	    height: 20%;
-	}
-	#group-flyer img{
-		max-width: 100%;
-	}
-}
-
-/** Social Button CSS **/
 
 .share-btn {
     display: inline-block;
     color: #ffffff;
     border: none;
     padding: 0.5em;
-/*     width: 4em; */
     box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
     outline: none;
     text-align: center;
@@ -648,4 +497,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2CB6B8', end
 
 calendar{
 	margin: 10px 0px;
+}
+.navmenu-brand-simple{
+	display: inline-block;
+}
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block;
+  }
+	.navmenu-brand-corto{
+		display: inline-block;
+	}
+	.navmenu-brand-completo{
+		display: none;
+	}
+	.filtro-title-completo{
+		display: none;
+	}
+	.filtro-title-corto{
+		display: block;
+	}
+}
+@media (min-width: 400px) {
+	.navmenu-brand-corto{
+		display: none;
+	}
+	.navmenu-brand-completo{
+		display: inline-block;
+	}
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    right: auto;
+    /*background: none;*/
+    border: none;
+  }
+  .canvas {
+    padding: 0;
+  }
+	.filtro-title-completo{
+		display: inline-block;
+	}
+	.filtro-title-corto{
+		display: none;
+	}
 }

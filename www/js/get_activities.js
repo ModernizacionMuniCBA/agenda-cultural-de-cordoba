@@ -41,7 +41,8 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 					var day = dateFormat(start_date, "dd");
 					//re-trim if we are in the middle of a word
 					// 	$('#event-list').append('<div class="row evento"><a href="actividad.html#act-'+item.id+'" class="evento"><div class="col-xs-12"><div class="row"><div class="col-xs-3 col-sm-1"><div class="circle-image" style="background-image: url('+event_image+')"></div></div><div class="col-xs-9"><div class="row"><div class="col-xs-12"><h5 class="event-title">'+item.titulo+'</h5></div></div><div class="row"><div class="col-xs-12"><p class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</p></div></div></div></div></div></a></div>');
-					$('#event-list').append('<div class="row"><a href="actividad.html#act-'+item.id+'"><div class="col-sm-12 act-card-holder"><div class="act-card"><div class="row"><div class="col-xs-9"><h1 class="card-title">'+item.titulo+'</h1><div class="event-divider"></div></div><div class="col-xs-3 event-date"><p>'+month+'<br/>'+day+'</p></div></div><div class="row"><div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9 act-card-info">'+trimmedString+'</div></div><div class="act-card-icons"><a href="actividad.html#act-'+item.id+'" class="pull-right btn vermas">Ver Más</a></div></div></div></a></div>');
+					// $('#event-list').append('<div class="row"><a href="actividad.html#act-'+item.id+'"><div class="col-sm-12 act-card-holder"><div class="act-card"><div class="row"><div class="col-xs-9"><h1 class="card-title">'+item.titulo+'</h1><div class="event-divider"></div></div><div class="col-xs-3 event-date"><p>'+month+'<br/>'+day+'</p></div></div><div class="row"><div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9 act-card-info">'+trimmedString+'</div></div><div class="act-card-icons"><a href="actividad.html#act-'+item.id+'" class="pull-right btn vermas">Ver Más</a></div></div></div></a></div>');
+					$('#event-list').append('<div class="col-xs-12 col-md-4 act-card-holder"><a href="actividad.html#act-'+item.id+'"><div class="act-card"><div class="row"><div class="col-xs-9"><h1 class="card-title">'+item.titulo+'</h1><div class="event-divider"></div></div><div class="col-xs-3 event-date"><p>'+month+'<br/>'+day+'</p></div></div><div class="row"><div class="col-xs-3 act-card-img padding-15"><div class="evento-img-cont" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9 act-card-info">'+trimmedString+'</div></div><div class="act-card-icons"><a href="actividad.html#act-'+item.id+'" class="pull-right icon-act-card"><i class="material-icons">add</i></a></div></div></a></div>');
 
 	 			}
 			});
@@ -58,7 +59,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 				htmlPrvNxt += '<li class="next"><a href="index.html?page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
 			}
 			htmlPrvNxt += '</div>'
-			$('#event-list').append(htmlPrvNxt);
+			$('#event-next').append(htmlPrvNxt);
 			// var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
 			// var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
 			// $('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
@@ -72,7 +73,7 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			$(window).on('resize', function(){
 				// var height = $('.foreground').outerHeight(true) - $('.event-date-time').outerHeight(true);
 			// var bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 20;
-			// $('.fixed-img').css('height', height  + $('.event-date-time').outerHeight(true)/2);
+			// $('.fixed-img').css('height', height  + $('.li-title').outerHeight(true)/2);
 			// $('.img-holder').css('height', $('.foreground').outerHeight(true));
 			// bottom = $('.fixed-img').position().top + $('.fixed-img').outerHeight(true) + 30;
 			// $('body').css('padding-top', bottom);

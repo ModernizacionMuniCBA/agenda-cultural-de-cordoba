@@ -40,7 +40,8 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			 		}else{
 				 		var event_image = "img/default-event.png";
 			 		}
-					$('#event-list').append('<a href="actividad.html#act-'+item.id+'" class="evento"><div class="row evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9"><span class="event-title">'+item.titulo+'</span><br/><span class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</span></div></div></a><div class="row"><div class="event-divider"></div></div>');
+					// $('#event-list').append('<a href="actividad.html#act-'+item.id+'" class="evento"><div class="row evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9"><span class="event-title">'+item.titulo+'</span><br/><span class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</span></div></div></a><div class="row"><div class="event-divider"></div></div>');
+					$('#event-list').append('<a href="actividad.html#act-'+item.id+'" class="evento"><div class="col-xs-12 col-sm-6 col-md-4 evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9"><span class="event-title">'+item.titulo+'</span><br/><span class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</span></div><div class="col-xs-12 act-card-img"><div class="event-divider"></div></div></div></a>');
 
 
 	 			}
@@ -51,15 +52,15 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 				if (prevPage == null){
 					prevPage = 1;
 				}
-				htmlPrvNxt += '<li class="previous"><a href="evento.html#'+string.split('?')[0]+'?page='+prevPage+'" class="pull-left pager-li page-prev"><span aria-hidden="true">&larr;</span>Anterior</a></li>';
+				htmlPrvNxt += '<li class="previous"><a href="filtro.html#'+string.split('?')[0]+'?page='+prevPage+'" class="pull-left pager-li page-prev"><span aria-hidden="true">&larr;</span>Anterior</a></li>';
 			}
 			if (data.next != null){
 				var nextPage = getParameterByName('page', data.next);
-				htmlPrvNxt += '<li class="next"><a href="evento.html#'+string.split('?')[0]+'?page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
+				htmlPrvNxt += '<li class="next"><a href="filtro.html#'+string.split('?')[0]+'?page='+nextPage+'" class="pull-right pager-li page-next">Siguiente<span aria-hidden="true">&rarr;</span></a></li>';
 			}
 			htmlPrvNxt += '</div>'
 			if(data.previous != null || data.next != null){
-				$('#event-list').append(htmlPrvNxt);
+				$('#event-next').append(htmlPrvNxt);
 			}
 
 			if(data.results[0] != undefined){

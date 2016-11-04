@@ -14,5 +14,6 @@
 		    $(".navbar-feria").css('background-color', '#FFF');
 			$('#searchForm')[0].reset();
 	        container.hide();
+					e.preventDefault();
 	    }
 	});

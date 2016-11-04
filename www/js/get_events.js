@@ -13,6 +13,6 @@ function handleData(data) {
 		if(category.imagen.thumbnail != undefined){
 			imageToUse = category.imagen.thumbnail.replace(/^http:\/\//i, 'https://');
 		}
-		$('#events-menu').append('<div class="row" style="margin-top:5px; margin-left:5px;"><li><a href="filtro.html#evt-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url('+imageToUse+');"></div></div><div class="col-xs-9">'+category.nombre+'</div></a></li></div>');
+		$('#events-menu').append('<div class="row row-li-tipo"><li><a href="filtro.html#evt-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url('+imageToUse+');"></div></div><div class="col-xs-9 nombre-tipo">'+category.nombre+'</div></a></li></div>');
 	});
 }

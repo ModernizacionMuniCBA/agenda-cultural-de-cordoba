@@ -14,9 +14,9 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 			actividad = string.split('-')[1];
 		}
 		if (window.cordova) {
-			var share_url = "https://modernizacionmunicba.github.io/feria-del-libro/www/evento.html#act-"+actividad;
+			var share_url = "https://modernizacionmunicba.github.io/agenda-cultural-de-cordoba/www/actividad.html#act-"+actividad;
 		}else{
-			var share_url = "https://modernizacionmunicba.github.io/feria-del-libro/www/evento.html%23act-"+actividad;
+			var share_url = "https://modernizacionmunicba.github.io/agenda-cultural-de-cordoba/www/actividad.html%23act-"+actividad;
 		}
 
 		$.ajax({

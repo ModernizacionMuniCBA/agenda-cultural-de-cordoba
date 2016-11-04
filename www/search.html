@@ -28,47 +28,96 @@
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-	  <!-- <div class="menu-bg"></div> -->
-	  <!-- <div class="menu-bg-green"></div> -->
-    <ul class="nav navmenu-nav">
-      <li>
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3">
-            <img src="img/logo-cultura.png" class="img-responsive">
+      <ul class="nav navmenu-nav">
+        <li>
+          <div class="row">
+            <div class="col-xs-12">
+              <div style="height: 57px; background-color: #5AC0BE; width:100%;">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <img src="img/logo-cultura-menu.png" class="img-responsive img-menu-cultura">
+                  </div>
+                  <div class="col-xs-6">
+                    <img src="img/muni-menu.png" class="img-responsive img-menu-muni">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+  	  <ul class="nav navmenu-nav">
+  	    <li><a href="index.html">INICIO</a></li>
+  	  </ul>
+      <div class="nav navmenu-nav">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingEventos" data-parent="#accordion" data-toggle="collapse" href="#collapseEventos" aria-expanded="false" aria-controls="collapseEventos">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  EVENTOS
+                </a>
+              </h4>
+            </div>
+            <div id="collapseEventos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEventos">
+              <div class="panel-body" id="events-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingTipo" data-toggle="collapse" data-parent="#accordion" href="#collapseTipo" aria-expanded="false" aria-controls="collapseTipo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  TIPO DE ACTIVIDAD
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTipo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTipo">
+              <div class="panel-body" id="categories-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingDisciplinas" data-toggle="collapse" data-parent="#accordion" href="#collapseDisciplinas" aria-expanded="false" aria-controls="collapseDisciplinas">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  DISCIPLINAS
+                </a>
+              </h4>
+            </div>
+            <div id="collapseDisciplinas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDisciplinas">
+              <div class="panel-body" id="disciplinas-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingLugares" data-toggle="collapse" data-parent="#accordion" href="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  LUGARES
+                </a>
+              </h4>
+            </div>
+            <div id="collapseLugares" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLugares">
+              <div class="panel-body" id="places-menu">
+              </div>
+            </div>
           </div>
         </div>
-      </li>
-    </ul>
-	  <ul class="nav navmenu-nav">
-	    <li class="active"><a href="index.html">INICIO</a></li>
-	  </ul>
-	  <ul class="nav navmenu-nav" id="events-menu">
-	    <li class="li-title">EVENTOS</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-	  <ul class="nav navmenu-nav" id="categories-menu">
-	    <li class="li-title">TIPO DE ACTIVIDAD</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-    <ul class="nav navmenu-nav" id="disciplinas-menu">
-	    <li class="li-title">DISCIPLINAS</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-    <ul class="nav navmenu-nav" id="places-menu">
-	    <li class="li-title">LUGARES</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
-	    <li><a href="about.html">SOBRE ESTA APP</a></li>
-	  </ul>
-	</nav>
+      </div>
+  	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
+  	    <li><a href="about.html">SOBRE ESTA APP</a></li>
+  	  </ul>
+    </nav>
 	<div class="navbar navbar-feria navbar-fixed-top">
 	  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand">Búsqueda</p>
+    <img src="img/muni-about.png" class="img-responsive navbar-muni pull-right">
+	  <p class="navmenu-brand navmenu-brand-simple">Búsqueda</p>
 	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
 	  <div class="searchField">
 

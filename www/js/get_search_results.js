@@ -26,7 +26,9 @@ function handleData(data) {
                 } else {
                     var event_image = "img/default-event.png";
                 }
-                $('#event-list').append('<a href="actividad.html#act-' + item.id + '" class="evento"><div class="row evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url(' + event_image + ');"></div></div><div class="col-xs-9"><span class="event-title">' + item.titulo + '</span><br/><span class="event-date">' + dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT") + '</span></div></div></a><div class="row"><div class="event-divider"></div></div>');
+                // $('#event-list').append('<a href="actividad.html#act-' + item.id + '" class="evento"><div class="row evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url(' + event_image + ');"></div></div><div class="col-xs-9"><span class="event-title">' + item.titulo + '</span><br/><span class="event-date">' + dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT") + '</span></div></div></a><div class="row"><div class="event-divider"></div></div>');
+                $('#event-list').append('<a href="actividad.html#act-'+item.id+'" class="evento"><div class="col-xs-12 col-sm-6 col-md-4 evento-card"><div class="col-xs-3 act-card-img"><div class="evento-img-cont no-margin-img" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9"><span class="event-title">'+item.titulo+'</span><br/><span class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</span></div><div class="col-xs-12 act-card-img"><div class="event-divider"></div></div></div></a>');
+
             }
         });
     } else {

@@ -19,7 +19,8 @@
 	<title>Agenda de Cultura</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:200,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -33,50 +34,100 @@
   </head>
   <body>
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-	  <!-- <div class="menu-bg"></div> -->
-	  <!-- <div class="menu-bg-green"></div> -->
-    <ul class="nav navmenu-nav">
-      <li>
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3">
-            <img src="img/logo-cultura.png" class="img-responsive">
+      <ul class="nav navmenu-nav">
+        <li>
+          <div class="row">
+            <div class="col-xs-12">
+              <div style="height: 57px; background-color: #5AC0BE; width:100%;">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <img src="img/logo-cultura-menu.png" class="img-responsive img-menu-cultura">
+                  </div>
+                  <div class="col-xs-6">
+                    <img src="img/muni-menu.png" class="img-responsive img-menu-muni">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+  	  <ul class="nav navmenu-nav">
+  	    <li class="active"><a href="index.html">INICIO</a></li>
+  	  </ul>
+      <div class="nav navmenu-nav">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingEventos" data-parent="#accordion" data-toggle="collapse" href="#collapseEventos" aria-expanded="false" aria-controls="collapseEventos">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  EVENTOS
+                </a>
+              </h4>
+            </div>
+            <div id="collapseEventos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEventos">
+              <div class="panel-body" id="events-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingTipo" data-toggle="collapse" data-parent="#accordion" href="#collapseTipo" aria-expanded="false" aria-controls="collapseTipo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  TIPO DE ACTIVIDAD
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTipo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTipo">
+              <div class="panel-body" id="categories-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingDisciplinas" data-toggle="collapse" data-parent="#accordion" href="#collapseDisciplinas" aria-expanded="false" aria-controls="collapseDisciplinas">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  DISCIPLINAS
+                </a>
+              </h4>
+            </div>
+            <div id="collapseDisciplinas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDisciplinas">
+              <div class="panel-body" id="disciplinas-menu">
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading collapsed" role="tab" id="headingLugares" data-toggle="collapse" data-parent="#accordion" href="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button">
+                  LUGARES
+                </a>
+              </h4>
+            </div>
+            <div id="collapseLugares" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLugares">
+              <div class="panel-body" id="places-menu">
+              </div>
+            </div>
           </div>
         </div>
-      </li>
-    </ul>
-	  <ul class="nav navmenu-nav">
-	    <li class="active"><a href="index.html">INICIO</a></li>
-	  </ul>
-	  <ul class="nav navmenu-nav" id="events-menu">
-	    <li class="li-title">EVENTOS</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-	  <ul class="nav navmenu-nav" id="categories-menu">
-	    <li class="li-title">TIPO DE ACTIVIDAD</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-    <ul class="nav navmenu-nav" id="disciplinas-menu">
-	    <li class="li-title">DISCIPLINAS</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-    <ul class="nav navmenu-nav" id="places-menu">
-	    <li class="li-title">LUGARES</li>
-	    <div class="li-title-borde"></div>
-	  </ul>
-	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
-	    <li><a href="about.html">SOBRE ESTA APP</a></li>
-	  </ul>
-	</nav>
+      </div>
+  	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
+  	    <li><a href="about.html">SOBRE ESTA APP</a></li>
+  	  </ul>
+    </nav>
 	<div class="navbar navbar-feria navbar-fixed-top">
 	  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <p class="navmenu-brand">ACTIVIDADES</p>
-	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
-	  <div class="searchField">
+	  <p class="navmenu-brand navmenu-brand-corto">Agenda Cultural</p>
+    <p class="navmenu-brand navmenu-brand-completo">Agenda Cultural de Córdoba</p>
+    <img src="img/muni-about.png" class="img-responsive navbar-muni pull-right">
 
+	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
+    <div class="searchField">
 		  <div class="row">
 			  <div class="col-xs-12">
 				  <form id="searchForm" action="search.html">
@@ -86,60 +137,13 @@
 		  </div>
 	  </div>
 	</div>
-
-	<!-- <div class="img-holder home navbar-fixed-top">
-		<div class="fixed-img home more_op"></div>
-		<div class="foreground">
-			<div class="img-text">
-
-				<div class="row">
-					<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
-						<center><img src="img/feria-eventos.png" class="logo-feria"/></center>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-6 col-xs-offset-6 col-sm-4 col-sm-offset-4">
-						<center><img src="img/muni-eventos.png" class="logo-feria-muni"/></center>
-					</div>
-				</div>
-				<div class="event-date-time index-recom-bg">
-			    	<div class="col-xs-12"><h1 class="index-recom">Te recomendamos</h1></div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
     <div class="container">
-	    <div id="event-list">
-
-        <!-- <div class="row">
-          <a href="#">
-          <div class="col-sm-12 act-card-holder">
-            <div class="act-card">
-              <div class="row">
-                <div class="col-xs-9">
-                  <h1 class="card-title">Ronda de Cuentos de "Veni que te cuento"</h1>
-                  <div class="event-divider"></div>
-                </div>
-                <div class="col-xs-3 event-date">
-                  <p>OCT<br/>12</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('img/image-eventos.png');">
-                </div></div>
-                <div class="col-xs-9 act-card-info"><span style="color: #000;">Los integrantes comparten historias para toda la familia. Se aconseja traer mates, pan criollo, oídos y corazones dispuestos. Ingreso especial por Obispo Trejo 191.</span></div>
-              </div>
-              <div class="act-card-icons"><a href="index.html" class="pull-right btn">Ver Más</a></div>
-            </div>
-          </div></a>
-        </div> -->
-
-        <!-- <div class="row"><div class="col-sm-12 act-card-holder"><div class="act-card"><div class="row"><div class="col-xs-9"><h1 class="card-title">item.titulo</h1><div class="event-divider"></div></div><div class="col-xs-3 event-date"><p>OCT<br/>12</p></div></div><div class="row"><div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9 act-card-info">trimmedString</div></div><div class="act-card-icons"></div></div></div></div> -->
-		    <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
-	    </div>
-    </div><!-- /.container -->
-
+	    <div class="row" id="event-list">
+        <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
+	     </div>
+     </div>
+     <div class="row" id="event-next"></div>
+   </div>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>

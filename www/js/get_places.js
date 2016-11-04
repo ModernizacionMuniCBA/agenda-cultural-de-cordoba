@@ -9,6 +9,6 @@
 		});
 		function handleData(data) {
 			$.each(data.results, function(i, category) {
-				$('#places-menu').append('<div class="row" style="margin-top:5px; margin-left:5px;"><li><a href="filtro.html#lugar-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url(img/default-event-sq.png);"></div></div><div class="col-xs-9">'+category.nombre+'</div></a></li></div>');
+				$('#places-menu').append('<div class="row row-li-tipo"><li><a href="filtro.html#lugar-'+category.id+'"><div class="col-xs-3"><div class="circle-image-li" style="background-image: url(img/default-event-sq.png);"></div></div><div class="col-xs-9 nombre-tipo">'+category.nombre+'</div></a></li></div>');
 			});
 		}
