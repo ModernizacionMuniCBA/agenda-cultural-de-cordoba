@@ -38,14 +38,8 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 					}else{
 						var trimmedString = yourString;
 					}
-					if (start_date) {
-						var month = dateFormat(start_date, "mmm");
-						var day = dateFormat(start_date, "dd");
-					} else {
-						console.log("Error en la fecha " + item.inicia);
-						var month = "";
-						var day = "";
-					}
+					var month = dateFormat(item.inicia, "mmm");
+					var day = dateFormat(item.inicia, "dd");
 					//re-trim if we are in the middle of a word
 					// 	$('#event-list').append('<div class="row evento"><a href="actividad.html#act-'+item.id+'" class="evento"><div class="col-xs-12"><div class="row"><div class="col-xs-3 col-sm-1"><div class="circle-image" style="background-image: url('+event_image+')"></div></div><div class="col-xs-9"><div class="row"><div class="col-xs-12"><h5 class="event-title">'+item.titulo+'</h5></div></div><div class="row"><div class="col-xs-12"><p class="event-date">'+dateFormat(item.inicia, "dddd dd 'de' mmmm, h:MM TT")+'</p></div></div></div></div></div></a></div>');
 					// $('#event-list').append('<div class="row"><a href="actividad.html#act-'+item.id+'"><div class="col-sm-12 act-card-holder"><div class="act-card"><div class="row"><div class="col-xs-9"><h1 class="card-title">'+item.titulo+'</h1><div class="event-divider"></div></div><div class="col-xs-3 event-date"><p>'+month+'<br/>'+day+'</p></div></div><div class="row"><div class="col-xs-3 act-card-img"><div class="evento-img-cont" style="background-image: url('+event_image+');"></div></div><div class="col-xs-9 act-card-info">'+trimmedString+'</div></div><div class="act-card-icons"><a href="actividad.html#act-'+item.id+'" class="pull-right btn vermas">Ver Más</a></div></div></div></a></div>');
