@@ -208,7 +208,7 @@ p{
 }
 
 .version-title{
-	font-size: 1.4em;
+	font-size: 1.1em;
 	color: #FFF;
 	text-align: left;
 }
@@ -404,20 +404,44 @@ p#event-info{
 .app-dev{
 	margin-top: 10px;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .app-dev h1{
-	font-size: 1.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin:5px;
-    margin-bottom: 10px;
+	font-size: 1.2em;
+  text-transform: uppercase;
+  margin:5px;
+  margin-bottom: 10px;
+	font-family: "Gotham-medium";
 }
 .app-dev h2{
 	margin: 5px;;
-	font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 600;
+	font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.version-platform{
+	font-size: 1.1em;
+	color: #FFF;
+	text-align: center;
+}
+
+a.version-platform-link{
+	color: #fff;
+	text-decoration: underline;
+}
+
+a.version-platform-link:hover{
+	color: #5AC0BE;
+	cursor: pointer;
+}
+a.version-platform-link.bg-white{
+	color: #000;
+	text-decoration: underline;
+}
+a.version-platform-link.bg-white:hover{
+	color: #5AC0BE;
+	cursor: pointer;
 }
 
 #loading{
@@ -529,6 +553,9 @@ calendar{
 }
 
 @media (min-width: 992px) {
+	  .version-platform{
+	    text-align: right;
+	  }
   .navbar {
     right: auto;
     /*background: none;*/
