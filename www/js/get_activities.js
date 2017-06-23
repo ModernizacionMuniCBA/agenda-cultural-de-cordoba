@@ -26,8 +26,8 @@ var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
 					if(item.inicia != null){
 						// 	var event_date_aux = new Date(item.inicia);
 						start_date = new Date(dateFormat(item.inicia, "mmmm dd, yyyy h:MM TT"));
-				 		if (item.image != undefined ){
-					 		var event_image = item.image.thumbnail.replace(/^http:\/\//i, 'https://');
+				 		if (item.imagen != undefined ){
+					 		var event_image = item.imagen.thumbnail.replace(/^http:\/\//i, 'https://');
 				 		}else{
 							var event_image = "img/default-event.png";
 						}
