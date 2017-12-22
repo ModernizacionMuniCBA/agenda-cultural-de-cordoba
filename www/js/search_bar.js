@@ -3,7 +3,6 @@
 			$(".searchField").removeClass('show');
 		}else{
 			$(".searchField").addClass('show');
-	  	$(".navbar-feria").css('background-color', '#F7F7F7');
 			$("#searchField").focus();
 		}
 	}

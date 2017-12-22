@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com;
-                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-                    media-src *;
-                    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
-                    font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Agenda de Cultura</title>
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' https://gobiernoabierto.cordoba.gob.ar https://www.google-analytics.com wss: ws:;
+                  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                  media-src *;
+                  img-src 'self' https://gobiernoabierto.cordoba.gob.ar;
+                  script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://gobiernoabierto.cordoba.gob.ar https://code.jquery.com;
+                  font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Agenda de Cultura</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="css/cultura-responsiveness.css" rel="stylesheet">
+  <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -26,33 +32,24 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/index.js"></script>
-    <meta property='og:title' content='Agenda de la Feria'/>
-    <meta property="og:image" content="http://modernizacionmunicba.github.io/feria-del-libro/www/img/share-img.png">
+
   </head>
-  <body>
+  <body ng-app="appCultura" ng-controller="ctrlMenu">
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
       <ul class="nav navmenu-nav">
         <li>
           <div class="row">
             <div class="col-xs-12">
-              <div style="height: 57px; background-color: #5AC0BE; width:100%;">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <img src="img/logo-cultura-menu.png" class="img-responsive img-menu-cultura">
-                  </div>
-                  <div class="col-xs-6">
-                    <img src="img/muni-menu.png" class="img-responsive img-menu-muni">
-                  </div>
-                </div>
+              <div style="height: 57px; background-color: #FFF; width:100%;">
               </div>
             </div>
 
           </div>
         </li>
       </ul>
-  	  <ul class="nav navmenu-nav">
-  	    <li><a href="index.html">INICIO</a></li>
-  	  </ul>
+      <ul class="nav navmenu-nav">
+        <li class="active"><a href="index.html">INICIO</a></li>
+      </ul>
       <div class="nav navmenu-nav">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
@@ -64,7 +61,18 @@
               </h4>
             </div>
             <div id="collapseEventos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEventos">
-              <div class="panel-body" id="events-menu">
+              <div class="panel-body" id="events-menu" ng-controller="ctrlListaEventos">
+                <div class="row row-li-tipo" ng-repeat="x in eventos">
+                  <li>
+                    <a href="index.html#evento-{{x.id}}">
+                      <div class="col-xs-3">
+                        <div ng-if="x.imagen.original != null" class="circle-image-li" style="background-image: url('{{x.imagen.original}}');"></div>
+                        <div ng-if="x.imagen.original == null" class="circle-image-li" style="background-image: url('img/default-event-sq.png');"></div>
+                      </div>
+                      <div class="col-xs-9 nombre-tipo">{{x.nombre}}</div>
+                    </a>
+                  </li>
+                </div>
               </div>
             </div>
           </div>
@@ -77,7 +85,17 @@
               </h4>
             </div>
             <div id="collapseTipo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTipo">
-              <div class="panel-body" id="categories-menu">
+              <div class="panel-body" id="categories-menu" ng-controller="ctrlListaCategorias">
+                <div class="row row-li-tipo" ng-repeat="x in categorias">
+                  <li>
+                    <a href="index.html#tipo-{{x.id}}">
+                      <div class="col-xs-3">
+                        <div class="circle-image-li" style="background-image: url('img/default-event-sq.png');"></div>
+                      </div>
+                      <div class="col-xs-9 nombre-tipo">{{x.nombre}}</div>
+                    </a>
+                  </li>
+                </div>
               </div>
             </div>
           </div>
@@ -90,7 +108,17 @@
               </h4>
             </div>
             <div id="collapseDisciplinas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDisciplinas">
-              <div class="panel-body" id="disciplinas-menu">
+              <div class="panel-body" id="disciplinas-menu" ng-controller="ctrlListaDisciplinas">
+                <div class="row row-li-tipo" ng-repeat="x in disciplinas">
+                  <li>
+                    <a href="index.html#disciplina-{{x.id}}">
+                      <div class="col-xs-3">
+                        <div class="circle-image-li" style="background-image: url('img/default-event-sq.png');"></div>
+                      </div>
+                      <div class="col-xs-9 nombre-tipo">{{x.nombre}}</div>
+                    </a>
+                  </li>
+                </div>
               </div>
             </div>
           </div>
@@ -103,139 +131,135 @@
               </h4>
             </div>
             <div id="collapseLugares" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLugares">
-              <div class="panel-body" id="places-menu">
+              <div class="panel-body" id="places-menu" ng-controller="ctrlListaLugares">
+                <div class="row row-li-tipo" ng-repeat="x in lugares">
+                  <li>
+                    <a  href="index.html#lugar-{{x.id}}">
+                      <div class="col-xs-3">
+                        <div ng-if="x.fotos[0].foto.original != null" class="circle-image-li" style="background-image: url('{{x.fotos[0].foto.original}}');"></div>
+                        <div ng-if="x.fotos[0].foto.original == null" class="circle-image-li" style="background-image: url('img/default-event-sq.png');"></div>
+                      </div>
+                      <div class="col-xs-9 nombre-tipo">{{x.nombre}}</div>
+                    </a>
+                  </li>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-  	  <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
-  	    <li><a href="about.html">SOBRE ESTA APP</a></li>
-  	  </ul>
+      <ul class="nav navmenu-nav" style="margin-bottom: 30px;">
+        <li><a href="about.html">SOBRE ESTA APP</a></li>
+      </ul>
     </nav>
-	<div class="navbar navbar-feria navbar-fixed-top">
-	  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-	    <span class="icon-bar"></span>
-	    <span class="icon-bar"></span>
-	    <span class="icon-bar"></span>
-	  </button>
+  <div class="navbar navbar-feria navbar-fixed-top">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="navmenu-brand navmenu-brand-completo"><img src="img/cultura.png" class="img-responsive"/></div>
     <img src="img/muni-about.png" class="img-responsive navbar-muni pull-right">
 
-	  <a href="javascript:void(0)" onclick="searchFunc();"><i class="glyphicon glyphicon-search navmenu-search"></i></a>
-	  <div class="searchField">
-
-		  <div class="row">
-			  <div class="col-xs-12">
-				  <form id="searchForm" action="search.html">
-				  	<input type="text" name="search" id="searchField" placeholder="Buscar un evento..">
-				  </form>
-			  </div>
-		  </div>
-	  </div>
-    <div class="row" style="display: inline-block;">
-      <div class="col-xs-3">
-        <div class="evento-img-cont" style="background-image: url(''); margin-left:10px;"></div>
-      </div>
-      <div class="col-xs-9">
-        <h1 class="text-feria-img" id="event-name"></h1>
-        <div class="event-date-time">
-			    <h2 class="event-date" id="event-date-start"></h2>
-					<h2 class="event-date" id="event-date-end"></h2>
-				</div>
-        <div class="event-tags"></div>
+    <a href="#" onclick="searchFunc();"><i class="fa fa-search navmenu-search"></i></a>
+    <div class="searchField">
+      <div class="row">
+        <div class="col-xs-12">
+          <form id="searchForm" ng-submit="getSearchResults()">
+            <input type="text" ng-model="textSearch" name="textSearch" id="searchField" placeholder="Buscar una actividad..">
+          </form>
+        </div>
       </div>
     </div>
-	</div>
-    <div class="container">
-	    <div class="row">
-		    <div class="col-xs-12 info-evento">
-          <p id="event-info"></p>
-			    <div class="row">
-				     <div class="col-xs-12">
-					     <a id="share" href="#" class="btn btn-warning share">Compartir</a>
-				     </div>
-				     <div class="col-xs-12">
-					     <a id="calendario" href="#" class="btn btn-success calendar">Agregar a Calendario</a>
-				     </div>
-			    </div>
-          <h2 class="event-date" id="event-location"></h2>
+  </div>
+  <div class="container actContainer" ng-controller="actividadController">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infoActividadCont">
+        <div class="imgActividad" style="background-image: url('{{actividad.imagen.original}}')">
 
-			    <div class="row" id="share-icons">
-			    </div>
-			    <div class="row" id="loading"><div class="col-xs-12"><img src="img/loading.gif" height="80px"/></div>
-		    </div>
-	    </div>
-    </div><!-- /.container -->
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 infoActividadCont">
+        <p class="fechaActividad">{{actividad.inicia | date: "d MMM HH:mm'hs'"}} - {{actividad.termina | date: "d MMM HH:mm'hs'"}}</p>
+        <div class="tiposCont">
+          <a href="index.html#tipo-{{x.id}}" class="tipoActividad" ng-repeat="x in actividad.tipos">
+            {{x.nombre}}
+          </a>
+        </div>
+        <a class="lugarActividad" href="index.html#lugar-{{actividad.lugar.id}}">{{actividad.lugar.nombre}}</a>
+        <p>{{actividad.lugar.direccion}}</p>
+        <div class="btnContainer">
+          <a class="btnMapa" href="http://maps.google.com/maps?&z=17&q={{actividad.lugar.latitud}}+{{actividad.lugar.longitud}}&ll={{actividad.lugar.latitud}}+{{actividad.lugar.longitud}}" target="_blank">Ver Mapa</a>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <h1 class="tituloActividad">{{actividad.titulo}}</h1>
+        <div class="descripcionActividad" ng-bind-html="actividad.descripcion">
+        </div>
+      </div>
+       <div class="col-xs-12">
+         <a id="share" href="#" class="btn btn-warning share" ng-click="shareActivity()">Compartir</a>
+         <div class="row" id="share-icons">
+         </div>
+       </div>
+       <div class="col-xs-12">
+         <a id="calendario" href="#" class="btn btn-success calendar" ng-click="addToCalendar()">Agregar a Calendario</a>
+       </div>
+    </div>
+  </div>
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
-    <script src="js/dateformat.js"></script>
-    <script src="js/get_activity.js"></script>
-    <!-- BEGIN: MENU  -->
-    <script src="js/get_events.js"></script>
-    <script src="js/get_categories.js"></script>
-    <script src="js/get_places.js"></script>
-    <script src="js/get_disciplinas.js"></script>
-    <script src="js/search_bar.js"></script>
-    <!--  END: MENU -->
+    <script src="js/index.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/angular-locale_es-ar.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
     <script type="text/javascript" src="js/Calendar.js"></script>
-	<script>
-		$(document).ready(function() {
-        $('a.calendar').click(function() {
-            			// prep some variables
-		  var startDate = start_date;
-		  var endDate = end_date;
-		  var title = page_title;
-		  var location = event_location;
-		  var notes = event_notes;
-		  var success = function(message) { alert("Evento agregado con éxito."); };
-		  var error = function(message) { alert("Error al agregar el evento."); };
-		  // create (the only function also supported on Android for now)
-		  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
-        });
-        $('a.share').click(function(event) {
-	        	event.preventDefault();
-				var options = {
-		 		  message: page_title, // not supported on some apps (Facebook, Instagram)
-				  url: share_url,
-				  chooserTitle: 'Elegí una app' // Android only, you can override the default share sheet title
-				}
+    <script src="js/page_size.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dateformat.js"></script>
+    <script src="js/url_spliter.js"></script>
+    <!-- BEGIN: MENU  -->
+    <script src="js/search_bar.js"></script>
+    <!--  END: MENU -->
+    <script src="js/jquery.matchHeight.js"></script>
 
-				var onSuccess = function(result) {
-// 				  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-// 				  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-				}
-
-				var onError = function(msg) {
-
-// 				  console.log("Sharing failed with message: " + msg);
-				}
-
-				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
-
-			});
-    });
-    </script>
+    <script src="version.js"></script>
     <script>
+    $( document ).ready(function() {
+      $('#app_version_number').html(cordova_app_version);
+      $(function() {
+          $('.infoActividadCont').matchHeight();
+      });
+    });
+  </script>
 
-			if (window.cordova) {
-			  //do stuff
-			  	$('a.share').show();
-			  	$('#share-icons').hide();
-			  	$('#calendario').show();
-			}else{
-				$('a.share').hide();
-				$('#calendario').hide();
-				$('#share-icons').show();
-			}
-		if (inCordova) {
-			touchAnalytics('/agenda-cultural-corodoba/app-evento', 'Evento app feria del libro');
-		} else {
-			ga('send', 'pageview');
-		}
-    </script>
+  <script>
 
+    if (window.cordova) {
+      //do stuff
+        $('a.share').show();
+        $('#share-icons').hide();
+        $('#calendario').show();
+    }else{
+      $('a.share').hide();
+      $('#calendario').hide();
+      $('#share-icons').show();
+    }
+  if (inCordova) {
+    touchAnalytics('/agenda-cultural-corodoba/app-evento', 'Evento app feria del libro');
+  } else {
+    ga('send', 'pageview');
+  }
+  </script>
   </body>
 </html>

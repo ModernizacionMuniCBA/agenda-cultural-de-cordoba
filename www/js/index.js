@@ -11,12 +11,12 @@ var app = {
     initialize: function() {
         this.addLog("Initialize");
         var uuid = (undefined === device) ? 'ru237287a121a73r82' : device.uuid;
-        ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});    
+        ga('create', uuid_analytics, {'storage': 'none','clientId': uuid});
         ga('set','checkProtocolTask', null); //just for mobile phonegap application
         ga('set','checkStorageTask',null);
-        ga('send', 'pageview', {'page': '/agenda-cultural-corodoba/app-home'}); 
+        ga('send', 'pageview', {'page': '/agenda-cultural-corodoba/app-home'});
         this.addLog("initialize 2");
-        
+
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -38,12 +38,11 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        
         console.log('Received Event: ' + id);
     },
     fullLog: "",
     addLog: function(txt){
-        this.fullLog += "<br />" + txt;
+        this.fullLog += "<br /><br/ >" + txt;
     }
 };
 
@@ -55,8 +54,9 @@ var inCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf
 if (inCordova) {
     app.initialize();
     }
-else 
+else
     {
+    document.addEventListener('deviceready', onDeviceReady, false);
     ga('create', uuid_analytics, 'auto');
     }
 
