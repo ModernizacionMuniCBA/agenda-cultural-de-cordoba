@@ -1,6 +1,6 @@
 var app = angular.module("appCultura", ['ngSanitize']);
 
-app.controller("ctrlListaActividades", ["$scope", "$http", "$location", function($scope, $http, $location) {
+app.controller("ctrlListaActividades", ["$scope", "$http", "$location", "$window", function($scope, $http, $location, $window) {
 
 
   var gobAbiertoAPI = "https://gobiernoabierto.cordoba.gob.ar/api";
@@ -48,10 +48,13 @@ app.controller("ctrlListaActividades", ["$scope", "$http", "$location", function
       });
   };
   $scope.resetFilter = function () {
-    $('.circleFa').hide();
-    $scope.tituloFilter1 = "Próximas";
-    $scope.tituloFilter2 = "Actividades";
-    $scope.getActividades(gobAbiertoAPI+gobAbiertoAPI_actividades+gobAbiertoAPI_audiencia+page_eventos+pageNumber+page_size_str+pageSize+formatJson);
+  //
+  //   $('.circleFa').hide();
+  //   $scope.tituloFilter1 = "Próximas";
+  //   $scope.tituloFilter2 = "Actividades";
+  //   $scope.getActividades(gobAbiertoAPI+gobAbiertoAPI_actividades+gobAbiertoAPI_audiencia+page_eventos+pageNumber+page_size_str+pageSize+formatJson);
+  //
+    $window.location.reload();
   }
 
 
@@ -112,7 +115,12 @@ app.controller("ctrlListaActividades", ["$scope", "$http", "$location", function
         });
 
     }else{
-      $scope.resetFilter();
+
+      $('.circleFa').hide();
+      $scope.tituloFilter1 = "Próximas";
+      $scope.tituloFilter2 = "Actividades";
+      $scope.getActividades(gobAbiertoAPI+gobAbiertoAPI_actividades+gobAbiertoAPI_audiencia+page_eventos+pageNumber+page_size_str+pageSize+formatJson);
+
     }
   }
 
