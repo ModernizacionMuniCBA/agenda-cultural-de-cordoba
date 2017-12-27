@@ -27,6 +27,7 @@
         <preference name="StatusBarOverlaysWebView" value="false" />
         <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
         <preference name="StatusBarStyle" value="default" />
+        <preference name="DisallowOverscroll" value="true" />
         <gap:plugin name="org.apache.cordova.inappbrowser" />
     </platform>
     <feature name="StatusBar">
@@ -42,4 +43,5 @@
     <plugin name="cordova-plugin-calendar" spec="^5.0.0">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value=" " />
     </plugin>
+    <plugin name="cordova-plugin-wkwebview-file-xhr" spec="^2.1.0" />
 </widget>
