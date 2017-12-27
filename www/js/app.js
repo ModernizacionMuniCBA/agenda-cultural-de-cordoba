@@ -54,7 +54,8 @@ app.controller("ctrlListaActividades", ["$scope", "$http", "$location", "$window
   //   $scope.tituloFilter2 = "Actividades";
   //   $scope.getActividades(gobAbiertoAPI+gobAbiertoAPI_actividades+gobAbiertoAPI_audiencia+page_eventos+pageNumber+page_size_str+pageSize+formatJson);
   //
-    $window.location.reload();
+    // $window.location.reload();
+    $window.location.href = 'index.html';
   }
 
 
