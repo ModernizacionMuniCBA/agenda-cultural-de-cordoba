@@ -1,28 +1,34 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
     },
-    "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
-        },
-        "cordova-plugin-calendar": {
-            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
-        }
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
     },
-    "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.feriadellibro"
-        }
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.agendacultural"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.agendacultural"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.agendacultural"
     }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "ar.gob.cordoba.gobiernoabierto.agendacultural"
+    }
+  }
 }

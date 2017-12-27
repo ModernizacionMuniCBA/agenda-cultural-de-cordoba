@@ -1,0 +1,56 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+        "spec": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+        "type": "directory"
+      },
+      "/Users/mvakoc/Documents/test/node_modules"
+    ]
+  ],
+  "_from": "../cordova-plugin-wkwebview-file-xhr/tests",
+  "_id": "cordova-plugin-wkwebview-file-xhr-tests@1.0.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-wkwebview-file-xhr-tests",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+    "spec": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:../cordova-plugin-wkwebview-file-xhr/tests",
+  "_shasum": "7e7071ea104b718e98d90e1d46632c5d1afa19cb",
+  "_shrinkwrap": null,
+  "_spec": "/Users/mvakoc/Documents/cordova-plugin-wkwebview-file-xhr/tests",
+  "_where": "/Users/mvakoc/Documents/test/node_modules",
+  "author": {
+    "name": "oraclejet"
+  },
+  "cordova": {
+    "id": "cordova-plugin-wkwebview-file-xhr-tests",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova WKWebView File XHR Plugin Tests",
+  "devDependencies": {},
+  "license": "UPL-1.0",
+  "name": "cordova-plugin-wkwebview-file-xhr-tests",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.0"
+}

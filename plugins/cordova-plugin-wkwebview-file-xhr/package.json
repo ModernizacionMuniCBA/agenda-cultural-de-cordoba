@@ -1,0 +1,62 @@
+{
+  "_from": "cordova-plugin-wkwebview-file-xhr",
+  "_id": "cordova-plugin-wkwebview-file-xhr@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-kB56rnFHc60hcVBcHk8GoBg8Pl8=",
+  "_location": "/cordova-plugin-wkwebview-file-xhr",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-wkwebview-file-xhr",
+    "name": "cordova-plugin-wkwebview-file-xhr",
+    "escapedName": "cordova-plugin-wkwebview-file-xhr",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-wkwebview-file-xhr/-/cordova-plugin-wkwebview-file-xhr-2.1.0.tgz",
+  "_shasum": "901e7aae714773ad2171505c1e4f06a0183c3e5f",
+  "_spec": "cordova-plugin-wkwebview-file-xhr",
+  "_where": "/Users/gframirez/Documents/Muni/agenda-cultural-de-cordoba",
+  "author": {
+    "name": "oraclejet"
+  },
+  "bugs": {
+    "url": "https://github.com/oracle/cordova-plugin-wkwebview-file-xhr/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-wkwebview-file-xhr",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova WKWebView File XHR Plugin",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "homepage": "https://github.com/oracle/cordova-plugin-wkwebview-file-xhr#readme",
+  "keywords": [
+    "cordova",
+    "wkwebview",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "UPL-1.0",
+  "name": "cordova-plugin-wkwebview-file-xhr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oracle/cordova-plugin-wkwebview-file-xhr.git"
+  },
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests",
+    "test": "npm run jshint"
+  },
+  "version": "2.1.0"
+}
