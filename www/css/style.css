@@ -592,7 +592,7 @@ calendar{
 	padding-bottom: 50px;
 }
 #listado-actividades .o-actividad{
-	/* width: 100%; */
+	width: 100%;
 	overflow: hidden;
 	height: 360px;
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
