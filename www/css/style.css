@@ -599,6 +599,7 @@ calendar{
 	display: inline-block;
 	margin: 10px;
 	text-align: left;
+	margin-left: 0px;
 	vertical-align: top;
 }
 #listado-actividades .o-actividad .o-actividad__imagen {
